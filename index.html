@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app/live.css?v=live-v2"></head><body data-view="exterior">
 <div class="livebar" role="status"><span><i class="dot"></i>Live research · updated <b id="updated">…</b> · next cycle <span id="next">…</span></span><a href="preview/">View the sample preview →</a></div>
-<header class="top"><a class="brand" href="./"><span class="mark">◆</span> Faceless <em>Floor</em></a><nav><a href="#top10">Top 10</a><a href="#agents">Agents</a><a href="#feed">Feed</a><a href="#discovery">Discovery</a><a href="#sources">Sources</a></nav></header>
+<header class="top"><a class="brand" href="./"><span class="mark">◆</span> Faceless <em>Floor</em></a><nav><a href="#top10">Top 10</a><a href="#tiktok">TikTok</a><a href="#agents">Agents</a><a href="#feed">Feed</a><a href="#discovery">Discovery</a><a href="#sources">Sources</a></nav></header>
 <main>
 <section class="hero"><div class="scene-wrap" id="scene-wrap"><picture id="scene-still" aria-hidden="true"><source media="(max-width:720px)" srcset="app/img/exterior-tall.webp" type="image/webp"><source srcset="app/img/exterior-wide.webp" type="image/webp"><source media="(max-width:720px)" srcset="app/img/exterior-tall.jpg"><img src="app/img/exterior-wide.jpg" alt="" decoding="async" fetchpriority="high"></picture><canvas id="scene" aria-label="3D Wall Street exchange building with fifty research agents"></canvas><div id="scene-fade"></div>
  <div class="scene-title"><span class="eyebrow">The Exchange · Live research</span><h1>Fifty agents hunting the <em>faceless</em> internet.</h1></div>
@@ -26,7 +26,8 @@ setTimeout(check,5000);})();
 </script>
 <section class="stats" id="stats"></section>
 <section id="top10" class="block"><div class="head"><div><span class="eyebrow">Shortlist · verified only</span><h2>Top 10 faceless pages</h2></div><p>Every number links to its public source and read time. Unknown stays unknown.</p></div><div id="top-note"></div><div id="pages" class="pages"></div>
- <div class="head" style="margin-top:36px"><div><span class="eyebrow">Near misses</span><h2 style="font-size:28px">Candidates still being checked</h2></div></div><div id="near" class="near"></div></section>
+ <div class="head" style="margin-top:36px"><div><span class="eyebrow">Near misses</span><h2 style="font-size:28px">Candidates still being checked</h2></div></div><div id="near" class="near"></div>
+ <div class="head" id="tiktok" style="margin-top:36px"><div><span class="eyebrow">TikTok · same rules, English only</span><h2 style="font-size:28px">TikTok candidates</h2></div><p>Per-video views are read from public video pages. Fewer than six recent videos stays partial and off the Top 10.</p></div><div id="tiktok-rows" class="near"></div></section>
 <section id="agents" class="block"><div class="head"><div><span class="eyebrow">The floor</span><h2>Fifty agents, eight desks of work</h2></div><p>Each agent’s real latest action and finding from the last cycle. Tap one to see it on the floor.</p></div><div id="teams" class="teams"></div></section>
 <section id="feed" class="block"><div class="head"><div><span class="eyebrow">Findings board</span><h2>Live feed</h2></div><p>Newest first, from the latest hourly cycle.</p></div><ol id="feedlist" class="feedlist glass"></ol></section>
 <section id="discovery" class="block"><div class="head"><div><span class="eyebrow">Discovery config</span><h2>Active queries & seeds</h2></div><p>From <code>config/discovery.json</code>; reasons in <a style="color:var(--gold)" href="https://github.com/joeypbrrr/faceless-floor/blob/main/DISCOVERY.md" target="_blank" rel="noopener">DISCOVERY.md</a>.</p></div><div id="disc" class="disc"></div></section>
@@ -38,5 +39,5 @@ setTimeout(check,5000);})();
 <footer><span>Faceless Floor · live research</span><span>Research only · no accounts · no posting · <a href="preview/" style="color:var(--gold)">sample preview</a></span></footer>
 <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1.10.0/dist/es-module-shims.js" crossorigin="anonymous"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
-<script type="module" src="app/app.js?v=live-v2"></script><script type="module">if(!(window.__ff&&window.__ff.dead()))import("./app/scene.js?v=live-v2").catch(function(e){console.warn("3D scene unavailable, showing still image:",e&&e.message);window.__ff&&window.__ff.fail("import");});</script>
+<script type="module" src="app/app.js?v=live-v3"></script><script type="module">if(!(window.__ff&&window.__ff.dead()))import("./app/scene.js?v=live-v2").catch(function(e){console.warn("3D scene unavailable, showing still image:",e&&e.message);window.__ff&&window.__ff.fail("import");});</script>
 </body></html>

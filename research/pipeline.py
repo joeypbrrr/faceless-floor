@@ -26,6 +26,7 @@ SOURCES = {}   # name -> {status, detail, url, at, ok, fail}
 FEED = []
 AGENT_STATE = {}
 BLOCKED_HOSTS = set()
+FETCH_CACHE = {}  # cookie-free GETs only; see fetch()
 
 def log_source(name, ok, url, detail=''):
     s = SOURCES.setdefault(name, {'name': name, 'ok': 0, 'fail': 0, 'url': url, 'status': 'reachable', 'detail': '', 'at': iso()})
@@ -33,12 +34,19 @@ def log_source(name, ok, url, detail=''):
     if not ok: s['detail'] = detail; s['url'] = url
     s['status'] = 'reachable' if s['ok'] and not s['fail'] else ('partial' if s['ok'] else 'blocked')
 
-def fetch(url, source, marker=None, timeout=20):
+def fetch(url, source, marker=None, timeout=20, cookies=True):
+    """GET a public page. cookies=False sends no Cookie header and stores none (required for TikTok)."""
     host = url.split('/')[2]
     if host in BLOCKED_HOSTS: return None
+    cache_key = (url, marker or '', bool(cookies))
+    if not cookies and cache_key in FETCH_CACHE:
+        log_source(source, True, url); return FETCH_CACHE[cache_key]
     time.sleep((3.0 if 'reddit.com' in host else 0.35) + random.random() * 0.3)
     try:
-        r = S.get(url, timeout=timeout, allow_redirects=True)
+        if cookies:
+            r = S.get(url, timeout=timeout, allow_redirects=True)
+        else:
+            r = requests.get(url, timeout=timeout, allow_redirects=True, headers={'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9'})
     except Exception as e:
         log_source(source, False, url, f'network error: {type(e).__name__}'); return None
     if r.status_code == 429:
@@ -53,7 +61,9 @@ def fetch(url, source, marker=None, timeout=20):
         log_source(source, False, url, 'bot challenge / CAPTCHA page (not bypassed)'); return None
     if marker and marker not in t:
         log_source(source, False, url, f'page loaded but expected data missing (login wall or JS-only); redirected to {r.url[:80]}' if r.url != url else 'page loaded but expected data missing (login wall or JS-only)'); return None
-    log_source(source, True, url); return t
+    log_source(source, True, url)
+    if not cookies: FETCH_CACHE[cache_key] = t
+    return t
 
 def act(agent, action, finding=None, status='ok'):
     a = AGENT_STATE[agent]; a['last_action'] = action; a['status'] = status; a['at'] = iso()
@@ -71,8 +81,17 @@ def build_agents():
         for i in range(count):
             n += 1; aid = f'agent-{n:02d}'
             if team == 'TikTok scouts':
-                task = (f'Web-search TikTok profiles: "{ws["tiktok_queries"][i]}", then read each public profile' if i < 4 else
-                        f'Check same-handle TikTok profiles for YouTube candidates, slice {i-3} of 4' if i < 7 else 'Probe TikTok tag/discover pages and Creative Center; log access')
+                tt_tasks = [
+                    f'Web-search TikTok profiles: "{ws["tiktok_queries"][0]}"',
+                    f'Web-search TikTok profiles: "{ws["tiktok_queries"][1]}"',
+                    f'Web-search TikTok profiles: "{ws["tiktok_queries"][2]}"',
+                    f'Web-search TikTok profiles: "{ws["tiktok_queries"][3]}"',
+                    'Read HypeAuditor public Top TikTok rankings (global, US, UK, Canada, Australia; 50 rows)',
+                    'Read public niche articles for TikTok profile and /video/ links',
+                    'Read public video pages + oEmbed: views, captions, language, AI label',
+                    'English / faceless / AI screen, then same-handle TikTok profiles',
+                ]
+                task = tt_tasks[i]
             elif team == 'YouTube Shorts scouts':
                 task = f'YouTube channel search: "{CFG["youtube_channel_search"][i]["q"]}"'
             elif team == 'Instagram Reels scouts':
@@ -188,14 +207,19 @@ def ai_signal(c):
     chan_txt = ' '.join([c.get('name') or '', c.get('description') or ''])
     chan_hits = sorted({m.group(0).strip() for m in AI_TELLS.finditer(chan_txt)}, key=str.lower)
     tells = []
-    if labelled: tells.append(f'YouTube "How this was made" label (sounds or visuals altered or fully generated) on {len(labelled)}/{len(vids)} sampled shorts, e.g. {labelled[0]["url"]}')
-    if per_vid: tells.append(f'AI tells in {len(per_vid)}/{len(vids)} sampled shorts ({", ".join(sorted({h for _, hs in per_vid for h in hs}, key=str.lower)[:6])}), e.g. {per_vid[0][0]["url"]}')
+    if labelled:
+        if c.get('platform') == 'TikTok':
+            tells.append(f'TikTok AIGC disclosure (IsAigc / AIGCDescription) on {len(labelled)}/{len(vids)} sampled videos, e.g. {labelled[0]["url"]}')
+        else:
+            tells.append(f'YouTube "How this was made" label (sounds or visuals altered or fully generated) on {len(labelled)}/{len(vids)} sampled shorts, e.g. {labelled[0]["url"]}')
+    noun = 'videos' if c.get('platform') == 'TikTok' else 'shorts'
+    if per_vid: tells.append(f'AI tells in {len(per_vid)}/{len(vids)} sampled {noun} ({", ".join(sorted({h for _, hs in per_vid for h in hs}, key=str.lower)[:6])}), e.g. {per_vid[0][0]["url"]}')
     if chan_hits: tells.append(f'channel name/about text: {", ".join(chan_hits[:5])}')
     if labelled or len(per_vid) >= 2 or chan_hits:
         return {'value': 'yes', 'evidence': 'AI-generated content: ' + '; '.join(tells) + '.', 'tells': tells}
     if len(vids) >= 3 and c.get('description') is not None:
-        return {'value': 'no', 'evidence': (f'Below the AI threshold in {len(vids)} sampled shorts + channel about text; only a weak tell: {tells[0]}.' if tells else
-                                             f'No AI disclosure label and no AI tells in {len(vids)} sampled shorts or the channel about text.'), 'tells': tells}
+        return {'value': 'no', 'evidence': (f'Below the AI threshold in {len(vids)} sampled {noun} + channel about text; only a weak tell: {tells[0]}.' if tells else
+                                             f'No AI disclosure label and no AI tells in {len(vids)} sampled {noun} or the channel about text.'), 'tells': tells}
     return {'value': 'unknown', 'evidence': 'Not enough public text read to judge (channel not deep-dived this cycle)' + (f'; weak tell: {tells[0]}' if tells else '') + '.', 'tells': tells}
 
 def apply_faceless(c, reviews):
@@ -207,7 +231,8 @@ def apply_faceless(c, reviews):
         elif rp >= 3: verdict, ev = 'no', f'The same person/character appears in {rp} of the {ff["videos"]} latest shorts (on-camera host).'
         elif rp == 2: verdict, ev = 'unclear', f'Faces in {ff["with_face"]}/{ff["checked"]} frames; one person recurs in 2 of {ff["videos"]} shorts.'
         else: verdict, ev = 'yes', f'Faces in {ff["with_face"]}/{ff["checked"]} frames, but no person recurs across shorts (stock/clip footage, no host).'
-        auto = {'verdict': verdict, 'method': 'automated', 'evidence': ev + ' Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).'}
+        where = 'YouTube frame thumbnails (hq1–hq3)' if c.get('platform') != 'TikTok' else 'public TikTok cover images from the video page'
+        auto = {'verdict': verdict, 'method': 'automated', 'evidence': ev + f' Method: automated OpenCV YuNet face detection + SFace identity matching on {where}.'}
     else:
         auto = {'verdict': 'unknown', 'evidence': 'Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).'}
     ai = c['ai_generated'] = ai_signal(c)
@@ -222,12 +247,21 @@ def apply_faceless(c, reviews):
     if rv: c['faceless'] = {'verdict': rv['faceless'], 'method': 'manual review', 'evidence': f'Manual review ({rv["reviewed_at"][:10]}): {rv["evidence"]}', 'automated': auto}
     return c['faceless']
 
-QUAL = {'min_median_views': 100000, 'max_days_since_upload': 14, 'min_shorts_sampled': 4}
+QUAL = {'min_median_views': 100000, 'max_days_since_upload': 14, 'min_shorts_sampled': 4, 'tiktok_min_videos': 6}
 def qualify(c):
     why_not = []
     vids = c.get('recent') or []
-    if c['platform'] != 'YouTube': why_not.append('no public per-video view counts on this platform from reachable sources')
-    if len([v for v in vids if v.get('views') and v.get('likes') is not None]) < QUAL['min_shorts_sampled']: why_not.append('fewer than 4 recent shorts with exact views + likes')
+    measured = [v for v in vids if v.get('views') and v.get('likes') is not None]
+    if c['platform'] == 'YouTube':
+        if len(measured) < QUAL['min_shorts_sampled']: why_not.append('fewer than 4 recent shorts with exact views + likes')
+    elif c['platform'] == 'TikTok':
+        if (c.get('language') or {}).get('verdict') != 'english': why_not.append('content not verified as primarily English')
+        if c.get('coverage') != 'full':
+            why_not.append(c.get('coverage_note') or f'partial: {len(measured)} verified video(s); a full qualifier needs {QUAL["tiktok_min_videos"]} recent public videos with per-video views and likes')
+        if not c.get('activity_verified'): why_not.append('recent activity not verified (no public video dated within 14 days)')
+    else:
+        why_not.append('no public per-video view counts on this platform from reachable sources')
+        if len(measured) < QUAL['min_shorts_sampled']: why_not.append('fewer than 4 recent shorts with exact views + likes')
     if (c.get('median_views') or 0) < QUAL['min_median_views']: why_not.append(f'median recent views below {QUAL["min_median_views"]:,}')
     if c.get('latest_upload'):
         age = (now() - datetime.fromisoformat(c['latest_upload'])).days
@@ -240,12 +274,15 @@ def qualify(c):
 
 _det = None; _rec = None
 REC_MODEL = os.path.join(ROOT, 'research/models/face_recognition_sface_2021dec.onnx')
-def faces_in(url):
+def faces_in(url, cookies=True):
     """Returns list of face feature vectors found in a public video frame thumbnail (None if unreadable)."""
     global _det, _rec
     import cv2, numpy as np
     try:
-        r = S.get(url, timeout=15)
+        if cookies:
+            r = S.get(url, timeout=15)
+        else:
+            r = requests.get(url, timeout=15, headers={'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9'})
         if r.status_code != 200: return None
         img = cv2.imdecode(np.frombuffer(r.content, np.uint8), cv2.IMREAD_COLOR)
         if img is None: return None
@@ -273,6 +310,56 @@ def recurring_person(per_video):
     return max((len(g) for g in groups.values()), default=0)
 
 # ---------------- cycle ----------------
+def finish_candidate(c):
+    """Faceless, monetization, format notes, then qualification. Shared by the hourly cycle and a TikTok-only pass."""
+    vids = c.get('recent') or []
+    apply_faceless(c, REVIEWS)
+    text = ' '.join([c.get('description') or ''] + [v.get('description') or '' for v in vids]).lower()
+    routes = []
+    if re.search(r'amzn\.to|amazon\.com', text): routes.append('Amazon affiliate links in descriptions')
+    if re.search(r'linktr\.ee|beacons\.ai|stan\.store|gumroad|shopify|etsy\.com|\.store\b|merch', text): routes.append('own store / link-in-bio product links')
+    if re.search(r'patreon|ko-fi|buymeacoffee', text): routes.append('fan support (Patreon/Ko-fi)')
+    if re.search(r'business|sponsor|inquir', text): routes.append('sponsorship inquiries invited')
+    if routes:
+        c['monetization'] = {'routes': routes, 'evidence': 'Read from public bio, captions, or descriptions'}
+    elif c['platform'] == 'YouTube':
+        c['monetization'] = {'routes': ['YouTube Shorts ad-revenue share (Partner Program status is not publicly visible)'],
+                             'evidence': 'No commercial links found in public descriptions'}
+    elif c['platform'] == 'TikTok':
+        c['monetization'] = {'routes': ['unknown'],
+                             'evidence': 'No commercial links in the public bio or sampled captions. TikTok Creativity Program enrollment is not publicly visible.'}
+    else:
+        c['monetization'] = {'routes': ['unknown'], 'evidence': 'No commercial links found in public descriptions'}
+    if vids:
+        unit = 'video' if c.get('platform') == 'TikTok' else 'short'
+        noun = unit + 's'
+        ds = sorted([datetime.fromisoformat(v['published']) for v in vids if v.get('published')])
+        lens = [v['length_s'] for v in vids if v.get('length_s')]
+        titles = [v['title'] for v in vids if v.get('title')]
+        why = []
+        if len(ds) >= 2:
+            span = max((ds[-1] - ds[0]).total_seconds() / 86400, 0.01); why.append(f'Posting cadence: {len(ds)} {noun} in {span:.1f} days (latest {ds[-1].astimezone(ET).strftime("%b %-d")}).')
+        if lens: why.append(f'Length: {min(lens)}–{max(lens)} s per {unit} (median {int(statistics.median(lens))} s).')
+        if c.get('median_views'):
+            if c.get('platform') == 'TikTok':
+                scope = f'{len(vids)} verified public videos' + ('' if c.get('coverage') == 'full' else ' (partial sample, not a confirmed latest-6)')
+            else:
+                scope = f'the latest {len(vids)} shorts'
+            why.append(f'Recent reach: median {c["median_views"]:,} views on {scope}' + (f', median like rate {c["like_rate"]:.1%}.' if c.get('like_rate') else '.'))
+        hooks = []
+        if sum('?' in t for t in titles) >= 2: hooks.append('question titles')
+        if sum(bool(re.search(r'\d', t)) for t in titles) >= 2: hooks.append('numbers in titles')
+        if sum(bool(re.search(r'#\w', t)) for t in titles) >= 2: hooks.append('hashtags in titles')
+        if sum(bool(re.search(r'\b(POV|AITA|WIBTA|TIFU)\b', t, re.I)) for t in titles) >= 1: hooks.append('Reddit-style framing (AITA/POV/TIFU)')
+        if sum(t.isupper() for t in titles if len(t) > 8) >= 1: hooks.append('all-caps hooks')
+        if titles: why.append('Title hooks: ' + (', '.join(hooks) if hooks else 'plain descriptive titles') + f'. Example: “{titles[0][:80]}”.')
+        c['why_it_works'] = why
+        c['replication_note'] = (f'Copy the format only: ~{int(statistics.median(lens)) if lens else "?"} s vertical {c.get("niche") or "faceless"} {noun}, '
+                                 f'same hook style ({", ".join(hooks) if hooks else "direct titles"}), similar cadence. Write original scripts and use our own or licensed footage — never repost their clips.')
+        c['latest_upload'] = ds[-1].isoformat() if ds else None
+    qualify(c)
+    return c
+
 def main():
     started = now()
     agents = build_agents()
@@ -433,43 +520,17 @@ def main():
         c['engagement_check'] = {'verdict': verdict, 'reasons': reasons, 'checked_at': iso(), 'by': aid}
         act(aid, f'Verified {c["handle"]}', f'{verdict}: ' + '; '.join(reasons[:2]))
 
-    # 7. TikTok + Instagram scouts
+    # 7. TikTok (scored like YouTube) + Instagram scouts
     tt = by_team['TikTok scouts']; ig = by_team['Instagram Reels scouts']
-    def tiktok_profile(h):
-        t = fetch(f'https://www.tiktok.com/{h}', 'TikTok public profile pages', marker='"followerCount"')
-        if not t: return None
-        g = lambda p: (re.search(p, t) or [None, None])[1]
-        return {'followers': int(g(r'"followerCount":(\d+)') or 0), 'hearts': int(g(r'"heartCount":(\d+)') or 0), 'videos': int(g(r'"videoCount":(\d+)') or 0),
-                'nickname': html.unescape(g(r'"nickname":"((?:[^"\\]|\\.)*)"') or ''), 'url': f'https://www.tiktok.com/{h}', 'read_at': iso(), 'source': 'TikTok public profile page'}
-    for i, q in enumerate(CFG['web_search']['tiktok_queries']):
-        hs = bing(q, tt[i], 'TikTok'); got = []
-        for h in hs[:4]:
-            p = tiktok_profile(h if h.startswith('@') else '@' + h)
-            if p:
-                c = cand(h, 'TikTok', name=p['nickname'], niche=q.replace('site:tiktok.com ', ''), url=p['url']); c['tiktok'] = p; c['found_by'].append(tt[i])
-                c['followers'] = {'value': p['followers'], 'display': f'{p["followers"]:,}', 'source': 'TikTok public profile page', 'url': p['url'], 'read_at': p['read_at']}
-                got.append(f'{c["handle"]} {p["followers"]:,} followers')
-        act(tt[i], f'Web search "{q}"', '; '.join(got) if got else (f'{len(hs)} profile links found, none readable' if hs else 'no TikTok profile links in results'))
-    for sd in CFG.get('seeds', []):
-        if sd.get('platform') == 'TikTok':
-            p = tiktok_profile(sd['handle'])
-            c = cand(sd['handle'], 'TikTok', niche=sd.get('niche'), url=sd['url']); c['seed'] = True; c['found_by'].append('seed'); c['signals'].append('tracked seed: ' + sd['reason'])
-            if p:
-                c['tiktok'] = p; c['name'] = p['nickname']
-                c['followers'] = {'value': p['followers'], 'display': f'{p["followers"]:,}', 'source': 'TikTok public profile page', 'url': p['url'], 'read_at': p['read_at']}
+    tiktok_report = {'error': None, 'rankings': [], 'ranking_lists': [], 'screened': [], 'english_verified': 0, 'limits': [], 'articles': []}
+    try:
+        import tiktok as tiktok_mod
+        tiktok_report = tiktok_mod.run(cands, cand, act, tt, [c for c in deep if c.get('recent')][:12])
+    except Exception as e:
+        traceback.print_exc()
+        tiktok_report = {'error': f'{type(e).__name__}: {e}', 'limits': [f'TikTok pass failed: {type(e).__name__}: {e}'], 'rankings': [], 'ranking_lists': [], 'screened': [], 'english_verified': 0, 'articles': []}
+        act(tt[0], 'TikTok pass failed', str(e)[:180], 'blocked')
     top_yt = [c for c in deep if c.get('recent')][:12]
-    for j in range(3):
-        aid = tt[4 + j]; got = []
-        for c in top_yt[j::3]:
-            p = tiktok_profile(c['handle'])
-            if p:
-                match = p['nickname'].strip().lower() == (c.get('name') or '').strip().lower()
-                c['tiktok_same_handle'] = {**p, 'nickname_matches_youtube_name': match, 'note': 'Same handle exists on TikTok; ownership is confirmed only if the display name matches' }
-                got.append(f'{c["handle"]}: {p["followers"]:,} followers' + (' (name matches)' if match else ' (different name — may be another owner)'))
-        act(aid, 'Checked same-handle TikTok profiles', '; '.join(got) if got else 'no same-handle TikTok profiles readable')
-    for url, name in [('https://www.tiktok.com/tag/redditstories', 'TikTok tag pages'), ('https://ads.tiktok.com/business/creativecenter/inspiration/popular/hashtag/pc/en', 'TikTok Creative Center')]:
-        fetch(url, name, marker='"uniqueId"' if 'tag' in url else 'hashtag_name')
-    act(tt[7], 'Probed TikTok tag page + Creative Center', ', '.join(f'{n}: {SOURCES[n]["status"]}' for n in ('TikTok tag pages', 'TikTok Creative Center') if n in SOURCES))
     for i, q in enumerate(CFG['web_search']['instagram_queries']):
         hs = bing(q, ig[i], 'Instagram'); got = []
         for h in hs[:3]:
@@ -489,37 +550,8 @@ def main():
 
     # 8. analysis, qualification, ranking (lead 2)
     for c in cands.values():
-        vids = c.get('recent') or []
-        apply_faceless(c, REVIEWS)
-        text = ' '.join([c.get('description') or ''] + [v.get('description') or '' for v in vids]).lower()
-        routes = []
-        if re.search(r'amzn\.to|amazon\.com', text): routes.append('Amazon affiliate links in descriptions')
-        if re.search(r'linktr\.ee|beacons\.ai|stan\.store|gumroad|shopify|etsy\.com|\.store\b|merch', text): routes.append('own store / link-in-bio product links')
-        if re.search(r'patreon|ko-fi|buymeacoffee', text): routes.append('fan support (Patreon/Ko-fi)')
-        if re.search(r'business|sponsor|inquir', text): routes.append('sponsorship inquiries invited')
-        c['monetization'] = {'routes': routes or ['YouTube Shorts ad-revenue share (Partner Program status is not publicly visible)'] if c['platform'] == 'YouTube' else (routes or ['unknown']),
-                             'evidence': 'Read from public channel/video descriptions' if routes else 'No commercial links found in public descriptions'}
-        if vids:
-            ds = sorted([datetime.fromisoformat(v['published']) for v in vids if v.get('published')])
-            lens = [v['length_s'] for v in vids if v.get('length_s')]
-            titles = [v['title'] for v in vids if v.get('title')]
-            why = []
-            if len(ds) >= 2:
-                span = max((ds[-1] - ds[0]).total_seconds() / 86400, 0.01); why.append(f'Posting cadence: {len(ds)} shorts in {span:.1f} days (latest {ds[-1].astimezone(ET).strftime("%b %-d")}).')
-            if lens: why.append(f'Length: {min(lens)}–{max(lens)} s per short (median {int(statistics.median(lens))} s).')
-            if c.get('median_views'): why.append(f'Recent reach: median {c["median_views"]:,} views on the latest {len(vids)} shorts' + (f', median like rate {c["like_rate"]:.1%}.' if c.get('like_rate') else '.'))
-            hooks = []
-            if sum('?' in t for t in titles) >= 2: hooks.append('question titles')
-            if sum(bool(re.search(r'\d', t)) for t in titles) >= 2: hooks.append('numbers in titles')
-            if sum(bool(re.search(r'#\w', t)) for t in titles) >= 2: hooks.append('hashtags in titles')
-            if sum(bool(re.search(r'\b(POV|AITA|WIBTA|TIFU)\b', t, re.I)) for t in titles) >= 1: hooks.append('Reddit-style framing (AITA/POV/TIFU)')
-            if sum(t.isupper() for t in titles if len(t) > 8) >= 1: hooks.append('all-caps hooks')
-            if titles: why.append('Title hooks: ' + (', '.join(hooks) if hooks else 'plain descriptive titles') + f'. Example: “{titles[0][:80]}”.')
-            c['why_it_works'] = why
-            c['replication_note'] = (f'Copy the format only: ~{int(statistics.median(lens)) if lens else "?"} s vertical {c.get("niche") or "faceless"} shorts, '
-                                     f'same hook style ({", ".join(hooks) if hooks else "direct titles"}), similar cadence. Write original scripts and use our own or licensed footage — never repost their clips.')
-            c['latest_upload'] = ds[-1].isoformat() if ds else None
-    top = [c for c in cands.values() if qualify(c)]
+        finish_candidate(c)
+    top = [c for c in cands.values() if c.get('qualified')]
     top.sort(key=lambda c: -c['median_views'])
     top = top[:10]
     for i, c in enumerate(top): c['rank'] = i + 1
@@ -532,7 +564,8 @@ def main():
     snapshot = {
         'mode': 'live', 'updated_at': iso(finished), 'updated_label': et_label(finished), 'cycle_started': iso(started),
         'next_cycle_at': datetime.fromtimestamp(int(nxt), ET).isoformat(timespec='seconds') if nxt else None,
-        'qualification': {**QUAL, 'faceless': 'no person recurs on camera in ≥2 of the 6 latest shorts (automated face detection + identity matching), or AI-generated content (YouTube "altered or fully generated" label or AI tells in titles/descriptions — AI avatars count as faceless; a verified real human face fails), or a dated manual review', 'engagement': 'like rate 0.5–25%, comments on ≥2 sampled shorts, no flat Social Blade growth'},
+        'qualification': {**QUAL, 'faceless': 'no person recurs on camera in ≥2 of the 6 latest shorts (automated face detection + identity matching), or AI-generated content (YouTube "altered or fully generated" label, TikTok AIGC disclosure, or AI tells in titles/descriptions — AI avatars count as faceless; a verified real human face fails), or a dated manual review', 'engagement': 'like rate 0.5–25%, comments on ≥2 sampled shorts, no flat Social Blade growth',
+                          'tiktok': 'English-only (video captions plus bio). A full qualifier needs 6 public videos with per-video views dated within 14 days. Fewer than that is partial and stays off the Top 10. HypeAuditor averages are a cross-check, never a substitute for per-video views.'},
         'counts': {'candidates': len(cands), 'deep_dived': len([c for c in cands.values() if c.get('recent')]), 'qualified': len(top),
                    'by_platform': {p: sum(1 for c in cands.values() if c['platform'] == p) for p in ('YouTube', 'TikTok', 'Instagram')}},
         'top10': top, 'candidates': sorted(cands.values(), key=lambda c: (not c.get('qualified'), -(c.get('median_views') or 0), -(c.get('followers') or {}).get('value', 0))),
@@ -540,8 +573,12 @@ def main():
         'directories': dirs, 'reddit_threads': threads[:30],
         'discovery': {'checked_at': CFG['checked_at'], 'youtube_channel_search': [q['q'] for q in CFG['youtube_channel_search']],
                       'youtube_viral_shorts_search': [q['q'] for q in CFG['youtube_viral_shorts_search']], 'youtube_hashtags': ['#' + h['tag'] for h in CFG['youtube_hashtag_pages']],
-                      'web_search': CFG['web_search'], 'reddit_subs': ['r/' + s for s in CFG['reddit']['subs']], 'seeds': CFG.get('seeds', [])},
-        'policy': 'Public, unauthenticated sources only. No logins, accounts, keys or bot-check bypass. Unknown numbers stay unknown. Replication copies formats, never content.'
+                      'web_search': CFG['web_search'], 'reddit_subs': ['r/' + s for s in CFG['reddit']['subs']], 'seeds': CFG.get('seeds', []),
+                      'tiktok': {'rankings': [x['url'] for x in CFG.get('tiktok', {}).get('rankings', [])],
+                                 'articles': [x['url'] for x in CFG.get('tiktok', {}).get('articles', [])],
+                                 'english_only': 'Primarily English video captions and bio'}},
+        'tiktok': tiktok_report,
+        'policy': 'Public, unauthenticated sources only. No logins, accounts, keys, cookies, or bot-check bypass. Unknown numbers stay unknown. TikTok candidates must be primarily English; per-video views come only from public video pages. Replication copies formats, never content.'
     }
     for c in snapshot['candidates']:
         for v in c.get('recent') or []: v.pop('description', None)
@@ -550,5 +587,96 @@ def main():
     print(f'cycle done {et_label(finished)}: {len(cands)} candidates, {snapshot["counts"]["deep_dived"]} deep-dived, {len(top)} qualified; sources: ' +
           ', '.join(f'{s["name"]}={s["status"]}' for s in SOURCES.values()))
 
+def publish_tiktok_pass():
+    """One TikTok pass merged into the current snapshot. Does not re-fetch YouTube."""
+    import tiktok as tiktok_mod
+    started = now()
+    snap = json.load(open(OUT))
+    agents = snap.get('agents') or build_agents()
+    for a in agents:
+        AGENT_STATE[a['id']] = a
+    by_team = {}
+    for a in agents:
+        by_team.setdefault(a['team'], []).append(a['id'])
+    cands = {}
+    def cand(handle, platform='YouTube', **kw):
+        if not handle: return None
+        handle = handle if str(handle).startswith('@') else '@' + str(handle)
+        k = platform + ':' + handle.lower()
+        c = cands.setdefault(k, {'key': k, 'platform': platform, 'handle': handle, 'name': None, 'found_by': [], 'niche': None, 'signals': [], 'best_short_floor': 0})
+        for kk, vv in kw.items():
+            if vv is not None and not c.get(kk): c[kk] = vv
+        return c
+    yt = [c for c in snap.get('candidates', []) if c.get('platform') == 'YouTube' and c.get('recent')]
+    yt.sort(key=lambda c: -(c.get('median_views') or 0))
+    report = tiktok_mod.run(cands, cand, act, by_team['TikTok scouts'], yt[:12])
+    fresh = []
+    for c in cands.values():
+        if c.get('platform') != 'TikTok': continue
+        finish_candidate(c)
+        for v in c.get('recent') or []: v.pop('description', None)
+        fresh.append(c)
+    kept = [c for c in snap.get('candidates', []) if c.get('platform') != 'TikTok']
+    # same-handle notes were written onto the YouTube dicts inside `yt`, which are the snapshot objects.
+    allc = kept + fresh
+    for c in allc: c.pop('rank', None)
+    top = [c for c in allc if c.get('qualified')]
+    top.sort(key=lambda c: -(c.get('median_views') or 0))
+    top = top[:10]
+    for i, c in enumerate(top): c['rank'] = i + 1
+    snap['top10'] = top
+    snap['candidates'] = sorted(allc, key=lambda c: (not c.get('qualified'), -(c.get('median_views') or 0), -(c.get('followers') or {}).get('value', 0)))
+    snap['counts'] = {
+        'candidates': len(allc),
+        'deep_dived': len([c for c in allc if c.get('recent')]),
+        'qualified': len(top),
+        'by_platform': {p: sum(1 for c in allc if c.get('platform') == p) for p in ('YouTube', 'TikTok', 'Instagram')},
+        'tiktok_english': len(fresh),
+        'tiktok_ai_generated': {k: sum(1 for c in fresh if (c.get('ai_generated') or {}).get('value') == k) for k in ('yes', 'no', 'unknown')},
+    }
+    if any(c.get('platform') == 'YouTube' and c.get('ai_generated') for c in kept):
+        snap['counts']['ai_generated'] = {k: sum(1 for c in allc if (c.get('ai_generated') or {}).get('value') == k) for k in ('yes', 'no', 'unknown')}
+    snap['tiktok'] = report
+    snap['tiktok_pass_at'] = iso(started)
+    snap['updated_at'] = iso()
+    snap['updated_label'] = et_label()
+    disc = snap.setdefault('discovery', {})
+    disc['tiktok'] = {'rankings': [x['url'] for x in CFG.get('tiktok', {}).get('rankings', [])],
+                      'articles': [x['url'] for x in CFG.get('tiktok', {}).get('articles', [])],
+                      'english_only': 'Primarily English video captions and bio'}
+    if isinstance(disc.get('web_search'), dict):
+        disc['web_search']['tiktok_queries'] = CFG.get('web_search', {}).get('tiktok_queries', disc['web_search'].get('tiktok_queries'))
+    qual = snap.setdefault('qualification', {})
+    qual['tiktok_min_videos'] = QUAL['tiktok_min_videos']
+    qual['tiktok'] = 'English-only (video captions plus bio). A full qualifier needs 6 public videos with per-video views dated within 14 days. Fewer than that is partial and stays off the Top 10. HypeAuditor averages are a cross-check, never a substitute for per-video views.'
+    old_sources = {s['name']: s for s in snap.get('sources', [])}
+    for s in SOURCES.values(): old_sources[s['name']] = s
+    snap['sources'] = sorted(old_sources.values(), key=lambda s: (s['status'] == 'reachable', s['name']))
+    dirs = list(snap.get('directories') or [])
+    seen_urls = {d.get('url') for d in dirs}
+    for row in report.get('ranking_lists') or []:
+        if row.get('url') in seen_urls:
+            for d in dirs:
+                if d.get('url') == row['url']:
+                    d['status'] = 'reachable' if row.get('rows') else 'blocked'
+                    d['detail'] = row.get('detail') or d.get('detail') or ''
+                    d['checked_at'] = row.get('read_at')
+        else:
+            dirs.append({'name': row.get('name'), 'url': row.get('url'), 'use': 'Public Top TikTok ranking (50 rows): followers, avg views, likes, comments, shares',
+                         'status': 'reachable' if row.get('rows') else 'blocked', 'detail': row.get('detail') or '', 'checked_at': row.get('read_at')})
+    snap['directories'] = dirs
+    snap['agents'] = agents
+    prev = snap.get('feed') or []
+    snap['feed'] = (FEED[::-1] + prev)[:120]
+    snap['policy'] = 'Public, unauthenticated sources only. No logins, accounts, keys, cookies, or bot-check bypass. Unknown numbers stay unknown. TikTok candidates must be primarily English; per-video views come only from public video pages. Replication copies formats, never content.'
+    tmp = OUT + '.tmp'
+    json.dump(snap, open(tmp, 'w'), indent=1, ensure_ascii=False)
+    os.replace(tmp, OUT)
+    print(f'tiktok pass {et_label()}: {len(fresh)} English-verified candidates, {report.get("screened_count")} screened out, rankings {report.get("rankings_count")}, qualified now {len(top)}')
+    print('limits:', '; '.join(report.get('limits') or [])[:500])
+
 if __name__ == '__main__':
-    main()
+    if '--tiktok-only' in sys.argv:
+        publish_tiktok_pass()
+    else:
+        main()
