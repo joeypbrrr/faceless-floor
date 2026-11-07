@@ -181,7 +181,7 @@
     {
       "name": "TikTok public profile pages",
       "url": "https://www.tiktok.com/@zachking",
-      "use": "Followers / hearts / video count",
+      "use": "Followers, hearts, video count, bio. The public itemList does not include recent videos.",
       "marker": "\"followerCount\""
     },
     {
@@ -267,6 +267,48 @@
       "url": "https://www.mojeek.com/search?q=faceless+youtube+channel",
       "use": "Backup web search",
       "marker": "results-standard"
+    },
+    {
+      "name": "HypeAuditor — Top TikTok (global)",
+      "url": "https://hypeauditor.com/top-tiktok/",
+      "use": "Public top-50 seed: followers, 30-day avg views, likes, comments, shares. No login.",
+      "marker": "__NUXT_DATA__"
+    },
+    {
+      "name": "HypeAuditor — Top TikTok United States",
+      "url": "https://hypeauditor.com/top-tiktok-united-states/",
+      "use": "Public US top-50 seed.",
+      "marker": "__NUXT_DATA__"
+    },
+    {
+      "name": "HypeAuditor — Top TikTok United Kingdom",
+      "url": "https://hypeauditor.com/top-tiktok-united-kingdom/",
+      "use": "Public UK top-50 seed.",
+      "marker": "__NUXT_DATA__"
+    },
+    {
+      "name": "HypeAuditor — Top TikTok Canada",
+      "url": "https://hypeauditor.com/top-tiktok-canada/",
+      "use": "Public Canada top-50 seed.",
+      "marker": "__NUXT_DATA__"
+    },
+    {
+      "name": "HypeAuditor — Top TikTok Australia",
+      "url": "https://hypeauditor.com/top-tiktok-australia/",
+      "use": "Public Australia top-50 seed.",
+      "marker": "__NUXT_DATA__"
+    },
+    {
+      "name": "TikTok oEmbed",
+      "url": "https://www.tiktok.com/oembed?url=https%3A%2F%2Fwww.tiktok.com%2F%40believerdaily%2Fvideo%2F7244190446103104774",
+      "use": "Official oEmbed for a public video URL. Confirms the video id (embed_product_id). No view count; author_name was not in the payload on Nov 7, 2026.",
+      "marker": "\"type\":\"video\""
+    },
+    {
+      "name": "TikTok public video pages",
+      "url": "https://www.tiktok.com/@believerdaily/video/7244190446103104774",
+      "use": "Per-video playCount, likes, comments, caption, language, AIGC flag.",
+      "marker": "webapp.video-detail"
     }
   ],
   "seeds": [
@@ -310,5 +352,261 @@
       "verified_at": "2026-11-07T01:42:00-05:00",
       "reason": "Public profile read Nov 7: 184,000 followers, 2.2M likes, 571 videos; found via web search for faceless Reddit-story TikToks. Per-video views are not publicly readable."
     }
-  ]
+  ],
+  "tiktok": {
+    "rows": 50,
+    "note": "Public unauthenticated pages only. Rankings are seeds and a cross-check. Per-video views come from public video pages, never from the ranking average. English-only: video captions plus bio.",
+    "rankings": [
+      {
+        "name": "HypeAuditor — Top TikTok (global)",
+        "url": "https://hypeauditor.com/top-tiktok/",
+        "country": null,
+        "rows": 50
+      },
+      {
+        "name": "HypeAuditor — Top TikTok United States",
+        "url": "https://hypeauditor.com/top-tiktok-united-states/",
+        "country": "US",
+        "rows": 50
+      },
+      {
+        "name": "HypeAuditor — Top TikTok United Kingdom",
+        "url": "https://hypeauditor.com/top-tiktok-united-kingdom/",
+        "country": "UK",
+        "rows": 50
+      },
+      {
+        "name": "HypeAuditor — Top TikTok Canada",
+        "url": "https://hypeauditor.com/top-tiktok-canada/",
+        "country": "CA",
+        "rows": 50
+      },
+      {
+        "name": "HypeAuditor — Top TikTok Australia",
+        "url": "https://hypeauditor.com/top-tiktok-australia/",
+        "country": "AU",
+        "rows": 50
+      }
+    ],
+    "articles": [
+      {
+        "url": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/",
+        "niche": "Faceless formats",
+        "why": "2026 roundup that links public faceless accounts, including one /video/ URL."
+      },
+      {
+        "url": "https://theconversation.com/a-tiktok-jesus-promises-divine-blessings-and-many-worldly-comforts-213130",
+        "niche": "AI spiritual",
+        "why": "Public article that links @believerdaily videos and describes them as computer-generated."
+      },
+      {
+        "url": "https://research.uiowa.edu/news/2023/11/tiktok-jesus-promises-divine-blessings-and-many-worldly-comforts",
+        "niche": "AI spiritual",
+        "why": "University reprint of the same public article, with the same video links."
+      },
+      {
+        "url": "https://www.bbc.com/future/article/20240819-why-these-ai-cat-videos-may-be-the-internets-future",
+        "niche": "AI cat stories",
+        "why": "BBC Future article that links AI-cat TikTok videos."
+      },
+      {
+        "url": "https://dailydot.com/ai-cat-stories-what-was-i-made-for-billie-eilish",
+        "niche": "AI cat stories",
+        "why": "Public article with AI-cat TikTok video links."
+      },
+      {
+        "url": "https://knowyourmeme.com/memes/ai-cat-stories-sad-meow-meow-song",
+        "niche": "AI cat stories",
+        "why": "Know Your Meme entry with multiple public TikTok /video/ links."
+      },
+      {
+        "url": "https://www.businessinsider.com/reddit-storytelling-tiktoks-have-exploded-in-popularity-heres-why-2022-9",
+        "niche": "Reddit-story narration",
+        "why": "Business Insider story that links Reddit-story TikTok videos."
+      },
+      {
+        "url": "https://www.vice.com/en/article/reddit-stories-tiktok/",
+        "niche": "Reddit-story narration",
+        "why": "Vice article with an @askthereddit video link."
+      },
+      {
+        "url": "https://typito.com/blog/tiktok-quiz/",
+        "niche": "Quiz",
+        "why": "Public list of quiz TikTok accounts."
+      },
+      {
+        "url": "https://www.reddit.com/r/ContentCreators/comments/1udegj8/.rss",
+        "niche": "Faceless formats",
+        "marker": "<feed",
+        "why": "Public RSS of a thread naming faceless TikTok handles. HTML Reddit is not used."
+      }
+    ],
+    "niche_handles": [
+      {
+        "handle": "quizxtreme",
+        "niche": "Quiz",
+        "source": "https://typito.com/blog/tiktok-quiz/"
+      },
+      {
+        "handle": "quiz__pro",
+        "niche": "Quiz",
+        "source": "https://typito.com/blog/tiktok-quiz/"
+      },
+      {
+        "handle": "laughhumor11",
+        "niche": "Quiz",
+        "source": "https://typito.com/blog/tiktok-quiz/"
+      },
+      {
+        "handle": "quizcraze30",
+        "niche": "Quiz",
+        "source": "https://typito.com/blog/tiktok-quiz/"
+      },
+      {
+        "handle": "hotshotquiz",
+        "niche": "Quiz",
+        "source": "https://typito.com/blog/tiktok-quiz/"
+      },
+      {
+        "handle": "nativeamerican.history",
+        "niche": "History",
+        "source": "https://blog.ossa.ai/james-wards-faceless-journey-to-tiktok-success-with-ossa-ai/"
+      },
+      {
+        "handle": "askthereddit",
+        "niche": "Reddit-story narration",
+        "source": "https://www.businessinsider.com/reddit-storytelling-tiktoks-have-exploded-in-popularity-heres-why-2022-9"
+      },
+      {
+        "handle": "redditrevealed",
+        "niche": "Reddit-story narration",
+        "source": "https://www.businessinsider.com/reddit-storytelling-tiktoks-have-exploded-in-popularity-heres-why-2022-9"
+      },
+      {
+        "handle": "redditnovels",
+        "niche": "Reddit-story narration",
+        "source": "https://www.vice.com/en/article/reddit-stories-tiktok/"
+      },
+      {
+        "handle": "andrea.animates",
+        "niche": "Stop-motion craft",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "felleanimated",
+        "niche": "Animation",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "lights.are.off",
+        "niche": "3D horror animation",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "24framesofginger",
+        "niche": "Stop-motion / VFX",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "gracewellsphoto",
+        "niche": "Object commercials",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "oneminmicro",
+        "niche": "Science",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "naturalhistorymuseum",
+        "niche": "Science",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "newscientist",
+        "niche": "Science",
+        "source": "https://shortsfast.com/blog/best-faceless-tiktok-accounts-2026/"
+      },
+      {
+        "handle": "ai.cinema012",
+        "niche": "AI stories",
+        "source": "https://rudevulture.com/fastest-growing-social-media-account-of-all-time-is-an-ai-reality-series/"
+      },
+      {
+        "handle": "aicatstories3",
+        "niche": "AI cat stories",
+        "source": "https://tokranks.com/th/creator/aicatstories3"
+      },
+      {
+        "handle": "believerdaily",
+        "niche": "AI spiritual",
+        "source": "https://theconversation.com/a-tiktok-jesus-promises-divine-blessings-and-many-worldly-comforts-213130"
+      },
+      {
+        "handle": "mpminds",
+        "niche": "AI cat stories",
+        "source": "https://www.bbc.com/future/article/20240819-why-these-ai-cat-videos-may-be-the-internets-future"
+      },
+      {
+        "handle": "relatablecutecats",
+        "niche": "AI cat stories",
+        "source": "https://www.bbc.com/future/article/20240819-why-these-ai-cat-videos-may-be-the-internets-future"
+      },
+      {
+        "handle": "cute_cat_games",
+        "niche": "AI cat stories",
+        "source": "https://www.dailydot.com/ai-cat-stories-what-was-i-made-for-billie-eilish"
+      },
+      {
+        "handle": "mpwild",
+        "niche": "AI cat stories",
+        "source": "https://www.dailydot.com/ai-cat-stories-what-was-i-made-for-billie-eilish"
+      },
+      {
+        "handle": "la.team.france",
+        "niche": "AI cat stories",
+        "source": "https://www.dailydot.com/ai-cat-stories-what-was-i-made-for-billie-eilish"
+      },
+      {
+        "handle": "lexslira1",
+        "niche": "AI cat stories",
+        "source": "https://knowyourmeme.com/memes/ai-cat-stories-sad-meow-meow-song"
+      },
+      {
+        "handle": "puffo.il.gatto",
+        "niche": "AI cat stories",
+        "source": "https://knowyourmeme.com/memes/ai-cat-stories-sad-meow-meow-song"
+      },
+      {
+        "handle": "cute.stories.5",
+        "niche": "AI cat stories",
+        "source": "https://knowyourmeme.com/memes/ai-cat-stories-sad-meow-meow-song"
+      },
+      {
+        "handle": "cat_tommmy",
+        "niche": "AI cat stories",
+        "source": "https://knowyourmeme.com/memes/ai-cat-stories-sad-meow-meow-song"
+      },
+      {
+        "handle": "studyw.tok",
+        "niche": "Study",
+        "source": "https://www.reddit.com/r/ContentCreators/comments/1udegj8/faceless_tiktok_ideas_quietly_winning_now/"
+      },
+      {
+        "handle": "verified_by_human",
+        "niche": "Commentary",
+        "source": "https://www.reddit.com/r/ContentCreators/comments/1udegj8/faceless_tiktok_ideas_quietly_winning_now/"
+      },
+      {
+        "handle": "urbookclubgirl",
+        "niche": "Books",
+        "source": "https://www.reddit.com/r/ContentCreators/comments/1udegj8/faceless_tiktok_ideas_quietly_winning_now/"
+      },
+      {
+        "handle": "mmotionthoughts",
+        "niche": "Mindset",
+        "source": "https://www.reddit.com/r/ContentCreators/comments/1udegj8/faceless_tiktok_ideas_quietly_winning_now/"
+      }
+    ]
+  }
 }
