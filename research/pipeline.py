@@ -83,7 +83,7 @@ def build_agents():
             elif team == 'Faceless niche scouts':
                 q = CFG['youtube_viral_shorts_search'][i]; task = f'Viral Shorts search "{q["q"]}" ({q["niche"]})'
             elif team == 'Why-it-works analysts':
-                task = f'Deep-dive candidate channels (slice {i+1} of 7): uploads, views, likes, hooks, face check'
+                task = f'Deep-dive candidate channels (slice {i+1} of 7): uploads, views, likes, hooks, face check, AI-generated check (counts as faceless)'
             elif team == 'Engagement verifiers':
                 task = f'Real-vs-fake check (slice {i+1} of 4): like/view, comments, Social Blade 14-day views'
             else:
@@ -160,7 +160,83 @@ def watch(video_id, source='YouTube watch pages'):
             'comments_display': comments, 'comments': int(comments.replace(',', '')) if comments and comments.replace(',', '').isdigit() else None,
             'published': g(r'"publishDate":"([^"]+)"'), 'length_s': int(g(r'"lengthSeconds":"(\d+)"') or 0) or None,
             'channel_id': g(r'"channelId":"(UC[\w-]{22})"'), 'channel_name': html.unescape(g(r'"ownerChannelName":"((?:[^"\\]|\\.)*)"') or ''),
-            'handle': owner, 'description': desc[:600], 'source': 'YouTube watch page', 'read_at': iso()}
+            'handle': owner, 'description': desc[:600], 'source': 'YouTube watch page', 'read_at': iso(),
+            # YouTube's own "How this was made" disclosure: "Sounds or visuals were altered or fully generated" (creator-declared synthetic content)
+            'synthetic_label': bool(SYNTH_LABEL.search(t))}
+
+# ---------------- AI-generated content signal (Joey's rule, Nov 7 2026) ----------------
+# AI-generated content ("AI slop": AI voiceover, AI images/video, AI avatars, synthetic narration) COUNTS AS FACELESS.
+# It is a positive faceless signal, never a disqualifier. An AI avatar/face is not a real human. A verified real human face still fails.
+SYNTH_LABEL = re.compile(r'"howThisWasMadeSectionViewModel":\{.{0,400}?altered or fully generated', re.S | re.I)
+AI_TELLS = re.compile(r"\bai[- ]?(?:generated|created|made|powered|animated)\b|\b(?:generated|created|made|animated|produced) (?:with|by|using) (?:an? )?ai\b"
+                      r"|\bai (?:voice ?overs?|voices?|narrat\w*|avatars?|art|images?|photos?|videos?|animations?|stor(?:y|ies)|asmr|family|cats?|baby|babies|influencer|music|song)\b"
+                      r"|#ai(?:story|stories|art|generated|video|videos|animation|asmr|shorts|cat|baby)?\b|text[- ]to[- ]speech|\btts\b|midjourney|\bsora\b|\bveo ?[23]\b|\bkling\b"
+                      r"|elevenlabs|eleven labs|synthesia|heygen|stable diffusion|dall[- ]?e\b|leonardo\.ai|\bhailuo\b|\bpika\b|invideo ai", re.I)
+
+def ai_signal(c):
+    """Returns {'value': 'yes'|'no'|'unknown', 'evidence': str, 'tells': [...]}. Only public text + YouTube's own disclosure label; never guessed.
+    yes  = YouTube 'altered or fully generated' label on >=1 sampled short, OR AI tells in >=2 sampled shorts' title/description,
+           OR the channel name/about text describes its content as AI-made (AI tells in channel metadata).
+    no   = >=3 sampled shorts + channel about text read, no label and no tells (no public AI evidence; not proof of human production).
+    unknown = not enough public text read."""
+    vids = c.get('recent') or []
+    labelled = [v for v in vids if v.get('synthetic_label')]
+    per_vid = []
+    for v in vids:
+        hits = sorted({m.group(0).strip() for m in AI_TELLS.finditer((v.get('title') or '') + ' \n ' + (v.get('description') or ''))}, key=str.lower)
+        if hits: per_vid.append((v, hits))
+    chan_txt = ' '.join([c.get('name') or '', c.get('description') or ''])
+    chan_hits = sorted({m.group(0).strip() for m in AI_TELLS.finditer(chan_txt)}, key=str.lower)
+    tells = []
+    if labelled: tells.append(f'YouTube "How this was made" label (sounds or visuals altered or fully generated) on {len(labelled)}/{len(vids)} sampled shorts, e.g. {labelled[0]["url"]}')
+    if per_vid: tells.append(f'AI tells in {len(per_vid)}/{len(vids)} sampled shorts ({", ".join(sorted({h for _, hs in per_vid for h in hs}, key=str.lower)[:6])}), e.g. {per_vid[0][0]["url"]}')
+    if chan_hits: tells.append(f'channel name/about text: {", ".join(chan_hits[:5])}')
+    if labelled or len(per_vid) >= 2 or chan_hits:
+        return {'value': 'yes', 'evidence': 'AI-generated content: ' + '; '.join(tells) + '.', 'tells': tells}
+    if len(vids) >= 3 and c.get('description') is not None:
+        return {'value': 'no', 'evidence': (f'Below the AI threshold in {len(vids)} sampled shorts + channel about text; only a weak tell: {tells[0]}.' if tells else
+                                             f'No AI disclosure label and no AI tells in {len(vids)} sampled shorts or the channel about text.'), 'tells': tells}
+    return {'value': 'unknown', 'evidence': 'Not enough public text read to judge (channel not deep-dived this cycle)' + (f'; weak tell: {tells[0]}' if tells else '') + '.', 'tells': tells}
+
+def apply_faceless(c, reviews):
+    """Faceless verdict = automated face check, then the AI-generated rule, then any dated manual review (which wins)."""
+    ff = c.get('face_frames')
+    if ff and ff['checked'] >= 6 and ff.get('videos', 0) >= 3:
+        rp = ff['max_videos_same_person']
+        if ff['with_face'] == 0: verdict, ev = 'yes', f'No faces in any of {ff["checked"]} frames sampled from the {ff["videos"]} latest shorts.'
+        elif rp >= 3: verdict, ev = 'no', f'The same person/character appears in {rp} of the {ff["videos"]} latest shorts (on-camera host).'
+        elif rp == 2: verdict, ev = 'unclear', f'Faces in {ff["with_face"]}/{ff["checked"]} frames; one person recurs in 2 of {ff["videos"]} shorts.'
+        else: verdict, ev = 'yes', f'Faces in {ff["with_face"]}/{ff["checked"]} frames, but no person recurs across shorts (stock/clip footage, no host).'
+        auto = {'verdict': verdict, 'method': 'automated', 'evidence': ev + ' Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).'}
+    else:
+        auto = {'verdict': 'unknown', 'evidence': 'Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).'}
+    ai = c['ai_generated'] = ai_signal(c)
+    c['faceless'] = auto
+    if ai['value'] == 'yes':
+        if auto['verdict'] == 'no':
+            # A face recurs. It may be an AI avatar (counts as faceless) or a real human (fails) — the detector can't tell, so it needs a dated manual review.
+            c['faceless'] = {'verdict': 'unclear', 'method': 'AI-generated rule', 'evidence': ai['evidence'] + ' A face recurs across shorts; counts as faceless once a manual review confirms it is AI-generated, fails if it is a real human. ' + auto['evidence'], 'automated': auto}
+        else:
+            c['faceless'] = {'verdict': 'yes', 'method': 'AI-generated rule', 'evidence': ai['evidence'] + ' AI-generated content counts as faceless (no real human face verified). ' + auto['evidence'], 'automated': auto}
+    rv = reviews.get(c['handle'])
+    if rv: c['faceless'] = {'verdict': rv['faceless'], 'method': 'manual review', 'evidence': f'Manual review ({rv["reviewed_at"][:10]}): {rv["evidence"]}', 'automated': auto}
+    return c['faceless']
+
+QUAL = {'min_median_views': 100000, 'max_days_since_upload': 14, 'min_shorts_sampled': 4}
+def qualify(c):
+    why_not = []
+    vids = c.get('recent') or []
+    if c['platform'] != 'YouTube': why_not.append('no public per-video view counts on this platform from reachable sources')
+    if len([v for v in vids if v.get('views') and v.get('likes') is not None]) < QUAL['min_shorts_sampled']: why_not.append('fewer than 4 recent shorts with exact views + likes')
+    if (c.get('median_views') or 0) < QUAL['min_median_views']: why_not.append(f'median recent views below {QUAL["min_median_views"]:,}')
+    if c.get('latest_upload'):
+        age = (now() - datetime.fromisoformat(c['latest_upload'])).days
+        if age > QUAL['max_days_since_upload']: why_not.append(f'latest upload {age} days ago')
+    if c['faceless']['verdict'] != 'yes': why_not.append(f'faceless check: {c["faceless"]["verdict"]}')
+    if (c.get('engagement_check') or {}).get('verdict') != 'pass': why_not.append(f'engagement check: {(c.get("engagement_check") or {}).get("verdict", "not run")}')
+    if not (c.get('followers') or {}).get('display'): why_not.append('follower count not read')
+    c['qualified'] = not why_not; c['not_qualified_because'] = why_not
+    return c['qualified']
 
 _det = None; _rec = None
 REC_MODEL = os.path.join(ROOT, 'research/models/face_recognition_sface_2021dec.onnx')
@@ -414,18 +490,7 @@ def main():
     # 8. analysis, qualification, ranking (lead 2)
     for c in cands.values():
         vids = c.get('recent') or []
-        ff = c.get('face_frames')
-        if ff and ff['checked'] >= 6 and ff.get('videos', 0) >= 3:
-            rp = ff['max_videos_same_person']
-            if ff['with_face'] == 0: verdict, ev = 'yes', f'No faces in any of {ff["checked"]} frames sampled from the {ff["videos"]} latest shorts.'
-            elif rp >= 3: verdict, ev = 'no', f'The same person/character appears in {rp} of the {ff["videos"]} latest shorts (on-camera host).'
-            elif rp == 2: verdict, ev = 'unclear', f'Faces in {ff["with_face"]}/{ff["checked"]} frames; one person recurs in 2 of {ff["videos"]} shorts.'
-            else: verdict, ev = 'yes', f'Faces in {ff["with_face"]}/{ff["checked"]} frames, but no person recurs across shorts (stock/clip footage, no host).'
-            c['faceless'] = {'verdict': verdict, 'method': 'automated', 'evidence': ev + ' Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).'}
-        else:
-            c['faceless'] = {'verdict': 'unknown', 'evidence': 'Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).'}
-        rv = REVIEWS.get(c['handle'])
-        if rv: c['faceless'] = {'verdict': rv['faceless'], 'method': 'manual review', 'evidence': f'Manual review ({rv["reviewed_at"][:10]}): {rv["evidence"]}', 'automated': c['faceless']}
+        apply_faceless(c, REVIEWS)
         text = ' '.join([c.get('description') or ''] + [v.get('description') or '' for v in vids]).lower()
         routes = []
         if re.search(r'amzn\.to|amazon\.com', text): routes.append('Amazon affiliate links in descriptions')
@@ -454,22 +519,7 @@ def main():
             c['replication_note'] = (f'Copy the format only: ~{int(statistics.median(lens)) if lens else "?"} s vertical {c.get("niche") or "faceless"} shorts, '
                                      f'same hook style ({", ".join(hooks) if hooks else "direct titles"}), similar cadence. Write original scripts and use our own or licensed footage — never repost their clips.')
             c['latest_upload'] = ds[-1].isoformat() if ds else None
-    QUAL = {'min_median_views': 100000, 'max_days_since_upload': 14, 'min_shorts_sampled': 4}
-    top = []
-    for c in cands.values():
-        why_not = []
-        vids = c.get('recent') or []
-        if c['platform'] != 'YouTube': why_not.append('no public per-video view counts on this platform from reachable sources')
-        if len([v for v in vids if v.get('views') and v.get('likes') is not None]) < QUAL['min_shorts_sampled']: why_not.append('fewer than 4 recent shorts with exact views + likes')
-        if (c.get('median_views') or 0) < QUAL['min_median_views']: why_not.append(f'median recent views below {QUAL["min_median_views"]:,}')
-        if c.get('latest_upload'):
-            age = (now() - datetime.fromisoformat(c['latest_upload'])).days
-            if age > QUAL['max_days_since_upload']: why_not.append(f'latest upload {age} days ago')
-        if c['faceless']['verdict'] != 'yes': why_not.append(f'faceless check: {c["faceless"]["verdict"]}')
-        if (c.get('engagement_check') or {}).get('verdict') != 'pass': why_not.append(f'engagement check: {(c.get("engagement_check") or {}).get("verdict", "not run")}')
-        if not (c.get('followers') or {}).get('display'): why_not.append('follower count not read')
-        c['qualified'] = not why_not; c['not_qualified_because'] = why_not
-        if c['qualified']: top.append(c)
+    top = [c for c in cands.values() if qualify(c)]
     top.sort(key=lambda c: -c['median_views'])
     top = top[:10]
     for i, c in enumerate(top): c['rank'] = i + 1
@@ -482,7 +532,7 @@ def main():
     snapshot = {
         'mode': 'live', 'updated_at': iso(finished), 'updated_label': et_label(finished), 'cycle_started': iso(started),
         'next_cycle_at': datetime.fromtimestamp(int(nxt), ET).isoformat(timespec='seconds') if nxt else None,
-        'qualification': {**QUAL, 'faceless': 'no person recurs on camera in ≥2 of the 6 latest shorts (automated face detection + identity matching), or a dated manual review', 'engagement': 'like rate 0.5–25%, comments on ≥2 sampled shorts, no flat Social Blade growth'},
+        'qualification': {**QUAL, 'faceless': 'no person recurs on camera in ≥2 of the 6 latest shorts (automated face detection + identity matching), or AI-generated content (YouTube "altered or fully generated" label or AI tells in titles/descriptions — AI avatars count as faceless; a verified real human face fails), or a dated manual review', 'engagement': 'like rate 0.5–25%, comments on ≥2 sampled shorts, no flat Social Blade growth'},
         'counts': {'candidates': len(cands), 'deep_dived': len([c for c in cands.values() if c.get('recent')]), 'qualified': len(top),
                    'by_platform': {p: sum(1 for c in cands.values() if c['platform'] == p) for p in ('YouTube', 'TikTok', 'Instagram')}},
         'top10': top, 'candidates': sorted(cands.values(), key=lambda c: (not c.get('qualified'), -(c.get('median_views') or 0), -(c.get('followers') or {}).get('value', 0))),
@@ -495,6 +545,7 @@ def main():
     }
     for c in snapshot['candidates']:
         for v in c.get('recent') or []: v.pop('description', None)
+    snapshot['counts']['ai_generated'] = {k: sum(1 for c in cands.values() if (c.get('ai_generated') or {}).get('value') == k) for k in ('yes', 'no', 'unknown')}
     tmp = OUT + '.tmp'; json.dump(snapshot, open(tmp, 'w'), indent=1, ensure_ascii=False); os.replace(tmp, OUT)
     print(f'cycle done {et_label(finished)}: {len(cands)} candidates, {snapshot["counts"]["deep_dived"]} deep-dived, {len(top)} qualified; sources: ' +
           ', '.join(f'{s["name"]}={s["status"]}' for s in SOURCES.values()))

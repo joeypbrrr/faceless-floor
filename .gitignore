@@ -4,3 +4,4 @@ research/models/
 __pycache__/
 *.tmp
 logs/
+research/rescore/ai-rescore-cache.json

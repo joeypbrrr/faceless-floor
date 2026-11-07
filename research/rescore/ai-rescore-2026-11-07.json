@@ -1,0 +1,5323 @@
+{
+ "rescored_at": "2026-11-07T02:21:08-05:00",
+ "source_snapshot": "2026-11-07T01:54:53-05:00",
+ "rule": "AI-generated content counts as faceless (see DISCOVERY.md); real human face still fails",
+ "sources": {},
+ "rows": [
+  {
+   "handle": "@BoltMotivationYT",
+   "platform": "YouTube",
+   "name": "BoltMotivation",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "Manual review (2026-11-07): Edited compilations of third-party clips (boxers, athletes, viral moments) with bold caption overlays; the channel owner never appears. Note: built on other people's footage — replicate the edit style with licensed/original footage only.",
+   "qualified_before": true,
+   "qualified_after": true,
+   "not_qualified_because": [],
+   "followers": "3.09M",
+   "median_views": 242361,
+   "like_rate": 0.0265,
+   "socialblade": {
+    "days": 10,
+    "views_gained": 46643010,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/boltmotivationyt",
+    "read_at": "2026-11-07T01:54:06-05:00"
+   },
+   "latest_upload": "2026-11-06T15:00:01-08:00",
+   "url": "https://www.youtube.com/@BoltMotivationYT"
+  },
+  {
+   "handle": "@AIMagicalFamily",
+   "platform": "YouTube",
+   "name": "Ai magical family",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: YouTube \"How this was made\" label (sounds or visuals altered or fully generated) on 6/6 sampled shorts, e.g. https://www.youtube.com/shorts/ilRAiqbl2aU; AI tells in 3/6 sampled shorts (#ai, AI family, AI story, AI-generated), e.g. https://www.youtube.com/shorts/ilRAiqbl2aU; channel name/about text: #AIStories, AI-powered.",
+    "tells": [
+     "YouTube \"How this was made\" label (sounds or visuals altered or fully generated) on 6/6 sampled shorts, e.g. https://www.youtube.com/shorts/ilRAiqbl2aU",
+     "AI tells in 3/6 sampled shorts (#ai, AI family, AI story, AI-generated), e.g. https://www.youtube.com/shorts/ilRAiqbl2aU",
+     "channel name/about text: #AIStories, AI-powered"
+    ]
+   },
+   "faceless_before": "no",
+   "faceless_after": "yes",
+   "faceless_evidence": "Manual review (2026-11-07): AI-generated content: the recurring 'faces' are AI-generated people in AI family stories (YouTube 'How this was made: altered or fully generated' label on 6/6 sampled shorts; descriptions say 'AI-generated story'). No real human host. Counts as faceless under the AI rule.",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "latest upload 105 days ago",
+    "engagement check: unknown"
+   ],
+   "followers": "355K",
+   "median_views": 6802295,
+   "like_rate": null,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 70992,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/aimagicalfamily",
+    "read_at": "2026-11-07T01:54:11-05:00"
+   },
+   "latest_upload": "2026-07-24T22:53:01-07:00",
+   "url": "https://www.youtube.com/@AIMagicalFamily"
+  },
+  {
+   "handle": "@FactsMine",
+   "platform": "YouTube",
+   "name": "Facts' Mine",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "Manual review (2026-11-07): A real human presenter (same man) talks to camera in the latest shorts (e.g. youtube.com/shorts/bkVu2sjvoqU). No AI disclosure label or AI tells. Fails faceless.",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "faceless check: no"
+   ],
+   "followers": "19.4M",
+   "median_views": 2158205,
+   "like_rate": 0.059,
+   "socialblade": {
+    "days": 13,
+    "views_gained": 80345424,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/factsmine",
+    "read_at": "2026-11-07T01:54:09-05:00"
+   },
+   "latest_upload": "2026-11-06T04:37:33-08:00",
+   "url": "https://www.youtube.com/@FactsMine"
+  },
+  {
+   "handle": "@zackdfilms",
+   "platform": "YouTube",
+   "name": "Zack D. Films",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "unclear",
+   "faceless_after": "unclear",
+   "faceless_evidence": "Faces in 6/18 frames; one person recurs in 2 of 6 shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "faceless check: unclear"
+   ],
+   "followers": "29.6M",
+   "median_views": 2101159,
+   "like_rate": 0.0528,
+   "socialblade": {
+    "days": 12,
+    "views_gained": 1194926655,
+    "first": "2026-10-25",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/zackdfilms",
+    "read_at": "2026-11-07T01:54:14-05:00"
+   },
+   "latest_upload": "2026-11-06T14:30:14-08:00",
+   "url": "https://www.youtube.com/@zackdfilms"
+  },
+  {
+   "handle": "@Rabbitteooooooooooooo",
+   "platform": "YouTube",
+   "name": "Rabbitteooooooooooooo",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "Faces in 1/18 frames, but no person recurs across shorts (stock/clip footage, no host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "latest upload 445 days ago"
+   ],
+   "followers": "309K",
+   "median_views": 1802292,
+   "like_rate": 0.0113,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 53741,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/rabbitteooooooooooooo",
+    "read_at": "2026-11-07T01:54:22-05:00"
+   },
+   "latest_upload": "2025-08-18T01:55:59-07:00",
+   "url": "https://www.youtube.com/@Rabbitteooooooooooooo"
+  },
+  {
+   "handle": "@ConsumerBuff",
+   "platform": "YouTube",
+   "name": "ConsumerBuff",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "No faces in any of 18 frames sampled from the 6 latest shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "latest upload 917 days ago"
+   ],
+   "followers": "454K",
+   "median_views": 1528604,
+   "like_rate": 0.0381,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 27877,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/consumerbuff",
+    "read_at": "2026-11-07T01:54:05-05:00"
+   },
+   "latest_upload": "2024-05-03T08:23:16-07:00",
+   "url": "https://www.youtube.com/@ConsumerBuff"
+  },
+  {
+   "handle": "@spaceballs",
+   "platform": "YouTube",
+   "name": "SpaceBalls",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "No faces in any of 18 frames sampled from the 6 latest shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "latest upload 192 days ago"
+   ],
+   "followers": "7.04M",
+   "median_views": 801154,
+   "like_rate": 0.0121,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 7458383,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/spaceballs",
+    "read_at": "2026-11-07T01:54:22-05:00"
+   },
+   "latest_upload": "2026-04-28T14:00:11-07:00",
+   "url": "https://www.youtube.com/@spaceballs"
+  },
+  {
+   "handle": "@AbsoluteHistory",
+   "platform": "YouTube",
+   "name": "Absolute History",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "The same person/character appears in 6 of the 6 latest shorts (on-camera host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "latest upload 22 days ago",
+    "faceless check: no"
+   ],
+   "followers": "3.7M",
+   "median_views": 421466,
+   "like_rate": 0.0293,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 3405348,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/absolutehistory",
+    "read_at": "2026-11-07T01:54:12-05:00"
+   },
+   "latest_upload": "2026-10-15T09:30:12-07:00",
+   "url": "https://www.youtube.com/@AbsoluteHistory"
+  },
+  {
+   "handle": "@justicebuys1",
+   "platform": "YouTube",
+   "name": "Justice Buys",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "Manual review (2026-11-07): A presenter (man in a blue shirt) appears on camera, face visible, in product demos among the latest shorts (e.g. youtube.com/shorts/zeVyI2bB_qQ).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "faceless check: no"
+   ],
+   "followers": "2.18M",
+   "median_views": 246267,
+   "like_rate": 0.0283,
+   "socialblade": {
+    "days": 11,
+    "views_gained": 20340487,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/justicebuys1",
+    "read_at": "2026-11-07T01:54:08-05:00"
+   },
+   "latest_upload": "2026-11-06T11:01:31-08:00",
+   "url": "https://www.youtube.com/@justicebuys1"
+  },
+  {
+   "handle": "@AstroKobi",
+   "platform": "YouTube",
+   "name": "AstroKobi",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "Manual review (2026-11-07): A real human presenter talks to camera in front of a microphone in most of the latest shorts. No AI disclosure label or AI tells. Fails faceless.",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "faceless check: no"
+   ],
+   "followers": "3.21M",
+   "median_views": 209887,
+   "like_rate": 0.0563,
+   "socialblade": {
+    "days": 13,
+    "views_gained": 6138191,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/astrokobi",
+    "read_at": "2026-11-07T01:54:19-05:00"
+   },
+   "latest_upload": "2026-11-05T10:17:33-08:00",
+   "url": "https://www.youtube.com/@AstroKobi"
+  },
+  {
+   "handle": "@chillinwithrachel",
+   "platform": "YouTube",
+   "name": "Chillin' with Rachel 💛",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "The same person/character appears in 6 of the 6 latest shorts (on-camera host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "faceless check: no"
+   ],
+   "followers": "4.4M",
+   "median_views": 144023,
+   "like_rate": 0.0119,
+   "socialblade": {
+    "days": 13,
+    "views_gained": 37366862,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/chillinwithrachel",
+    "read_at": "2026-11-07T01:54:10-05:00"
+   },
+   "latest_upload": "2026-11-05T13:12:28-08:00",
+   "url": "https://www.youtube.com/@chillinwithrachel"
+  },
+  {
+   "handle": "@factsfromfeliz",
+   "platform": "YouTube",
+   "name": "Feliz",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "The same person/character appears in 3 of the 6 latest shorts (on-camera host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "latest upload 550 days ago",
+    "faceless check: no"
+   ],
+   "followers": "3.23M",
+   "median_views": 100291,
+   "like_rate": 0.0157,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 403083,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/factsfromfeliz",
+    "read_at": "2026-11-07T01:54:13-05:00"
+   },
+   "latest_upload": "2025-05-05T02:51:46-07:00",
+   "url": "https://www.youtube.com/@factsfromfeliz"
+  },
+  {
+   "handle": "@jayshetty",
+   "platform": "YouTube",
+   "name": "Jay Shetty",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "The same person/character appears in 6 of the 6 latest shorts (on-camera host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "latest upload 101 days ago",
+    "faceless check: no"
+   ],
+   "followers": "4.89M",
+   "median_views": 55413,
+   "like_rate": 0.0405,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 566072,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/jayshetty",
+    "read_at": "2026-11-07T01:54:12-05:00"
+   },
+   "latest_upload": "2026-07-28T06:00:02-07:00",
+   "url": "https://www.youtube.com/@jayshetty"
+  },
+  {
+   "handle": "@CharlotteDobre",
+   "platform": "YouTube",
+   "name": "Charlotte Dobre",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "The same person/character appears in 6 of the 6 latest shorts (on-camera host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "faceless check: no"
+   ],
+   "followers": "2.64M",
+   "median_views": 47845,
+   "like_rate": 0.0601,
+   "socialblade": {
+    "days": 13,
+    "views_gained": 9582879,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/charlottedobre",
+    "read_at": "2026-11-07T01:54:23-05:00"
+   },
+   "latest_upload": "2026-11-06T12:00:29-08:00",
+   "url": "https://www.youtube.com/@CharlotteDobre"
+  },
+  {
+   "handle": "@HistoryBypass",
+   "platform": "YouTube",
+   "name": "History Bypass",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "The same person/character appears in 3 of the 6 latest shorts (on-camera host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "faceless check: no"
+   ],
+   "followers": "877K",
+   "median_views": 43591,
+   "like_rate": 0.0179,
+   "socialblade": {
+    "days": 13,
+    "views_gained": 16601413,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/historybypass",
+    "read_at": "2026-11-07T01:54:16-05:00"
+   },
+   "latest_upload": "2026-11-06T09:30:04-08:00",
+   "url": "https://www.youtube.com/@HistoryBypass"
+  },
+  {
+   "handle": "@IAparalelo",
+   "platform": "YouTube",
+   "name": "Parallel Lab",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: AI tells in 6/6 sampled shorts (#AIASMR, AI ASMR, AI-generated, AI-Generated, created with AI, Hailuo), e.g. https://www.youtube.com/shorts/PXFA070juPw.",
+    "tells": [
+     "AI tells in 6/6 sampled shorts (#AIASMR, AI ASMR, AI-generated, AI-Generated, created with AI, Hailuo), e.g. https://www.youtube.com/shorts/PXFA070juPw"
+    ]
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: AI tells in 6/6 sampled shorts (#AIASMR, AI ASMR, AI-generated, AI-Generated, created with AI, Hailuo), e.g. https://www.youtube.com/shorts/PXFA070juPw. AI-generated content counts as faceless (no real human face verified). Faces in 1/18 frames, but no person recurs across shorts (stock/clip footage, no host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "latest upload 284 days ago"
+   ],
+   "followers": "87.3K",
+   "median_views": 41123,
+   "like_rate": 0.0081,
+   "socialblade": {
+    "days": 13,
+    "views_gained": 168774,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/iaparalelo",
+    "read_at": "2026-11-07T01:54:07-05:00"
+   },
+   "latest_upload": "2026-01-26T12:28:00-08:00",
+   "url": "https://www.youtube.com/@IAparalelo"
+  },
+  {
+   "handle": "@Funnycatlos",
+   "platform": "YouTube",
+   "name": "Funny Catlos",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "No faces in any of 18 frames sampled from the 6 latest shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "latest upload 235 days ago"
+   ],
+   "followers": "42K",
+   "median_views": 34990,
+   "like_rate": 0.0098,
+   "socialblade": {
+    "days": 11,
+    "views_gained": 296962,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/funnycatlos",
+    "read_at": "2026-11-07T01:54:17-05:00"
+   },
+   "latest_upload": "2026-03-16T09:20:00-07:00",
+   "url": "https://www.youtube.com/@Funnycatlos"
+  },
+  {
+   "handle": "@CatchingKillers",
+   "platform": "YouTube",
+   "name": "Catching Killers",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "Faces in 7/18 frames, but no person recurs across shorts (stock/clip footage, no host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000"
+   ],
+   "followers": "1.6M",
+   "median_views": 31841,
+   "like_rate": 0.0262,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 3282957,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/catchingkillers",
+    "read_at": "2026-11-07T01:54:10-05:00"
+   },
+   "latest_upload": "2026-10-24T12:30:31-07:00",
+   "url": "https://www.youtube.com/@CatchingKillers"
+  },
+  {
+   "handle": "@petsmemes21",
+   "platform": "YouTube",
+   "name": "Pets Memes",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "latest upload 646 days ago",
+    "faceless check: unknown",
+    "engagement check: suspicious"
+   ],
+   "followers": "69.5K",
+   "median_views": 25176,
+   "like_rate": 0.0216,
+   "socialblade": {
+    "days": 4,
+    "views_gained": 184667,
+    "first": "2026-10-27",
+    "last": "2026-11-06",
+    "url": "https://socialblade.com/youtube/handle/petsmemes21",
+    "read_at": "2026-11-07T01:54:20-05:00"
+   },
+   "latest_upload": "2025-01-29T20:24:22-08:00",
+   "url": "https://www.youtube.com/@petsmemes21"
+  },
+  {
+   "handle": "@HistoryHideout",
+   "platform": "YouTube",
+   "name": "History Hideout",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: AI tells in 2/6 sampled shorts (#ai, #aiart, Ai art, Ai image, midjourney), e.g. https://www.youtube.com/shorts/3ea4556g6xo.",
+    "tells": [
+     "AI tells in 2/6 sampled shorts (#ai, #aiart, Ai art, Ai image, midjourney), e.g. https://www.youtube.com/shorts/3ea4556g6xo"
+    ]
+   },
+   "faceless_before": "no",
+   "faceless_after": "yes",
+   "faceless_evidence": "Manual review (2026-11-07): AI-generated content: frames are AI-generated portrait images of historical figures (titles/descriptions tag #ai, AI art, Midjourney). No real human host appears. Counts as faceless under the AI rule.",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "latest upload 969 days ago"
+   ],
+   "followers": "75K",
+   "median_views": 24881,
+   "like_rate": 0.0286,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 16671,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/historyhideout",
+    "read_at": "2026-11-07T01:54:14-05:00"
+   },
+   "latest_upload": "2024-03-12T08:25:21-07:00",
+   "url": "https://www.youtube.com/@HistoryHideout"
+  },
+  {
+   "handle": "@RedditGigglez",
+   "platform": "YouTube",
+   "name": "Reddit Gigglez",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "No faces in any of 18 frames sampled from the 6 latest shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000"
+   ],
+   "followers": "23.6K",
+   "median_views": 16533,
+   "like_rate": 0.0366,
+   "socialblade": {
+    "days": 2,
+    "views_gained": 310587,
+    "first": "2026-11-05",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/redditgigglez",
+    "read_at": "2026-11-07T01:54:07-05:00"
+   },
+   "latest_upload": "2026-11-06T22:19:11-08:00",
+   "url": "https://www.youtube.com/@RedditGigglez"
+  },
+  {
+   "handle": "@fun-with-a.i.",
+   "platform": "YouTube",
+   "name": "Fun with AI",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: AI tells in 3/6 sampled shorts (#ai, AI Photo), e.g. https://www.youtube.com/shorts/4QnMxz6T_Ps; channel name/about text: AI created.",
+    "tells": [
+     "AI tells in 3/6 sampled shorts (#ai, AI Photo), e.g. https://www.youtube.com/shorts/4QnMxz6T_Ps",
+     "channel name/about text: AI created"
+    ]
+   },
+   "faceless_before": "unclear",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: AI tells in 3/6 sampled shorts (#ai, AI Photo), e.g. https://www.youtube.com/shorts/4QnMxz6T_Ps; channel name/about text: AI created. AI-generated content counts as faceless (no real human face verified). Faces in 8/18 frames; one person recurs in 2 of 6 shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "latest upload 387 days ago"
+   ],
+   "followers": "53.5K",
+   "median_views": 14368,
+   "like_rate": 0.0095,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 34455,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/fun-with-a.i.",
+    "read_at": "2026-11-07T01:54:15-05:00"
+   },
+   "latest_upload": "2025-10-15T15:11:44-07:00",
+   "url": "https://www.youtube.com/@fun-with-a.i."
+  },
+  {
+   "handle": "@OdditiesonElmStreet",
+   "platform": "YouTube",
+   "name": "Oddities on Elm Street",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "no",
+   "faceless_after": "no",
+   "faceless_evidence": "The same person/character appears in 6 of the 6 latest shorts (on-camera host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "faceless check: no"
+   ],
+   "followers": "301K",
+   "median_views": 13449,
+   "like_rate": 0.0587,
+   "socialblade": {
+    "days": 11,
+    "views_gained": 915727,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/odditiesonelmstreet",
+    "read_at": "2026-11-07T01:54:18-05:00"
+   },
+   "latest_upload": "2026-11-06T16:22:42-08:00",
+   "url": "https://www.youtube.com/@OdditiesonElmStreet"
+  },
+  {
+   "handle": "@misteruniverse00",
+   "platform": "YouTube",
+   "name": "MisterUniverse",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "No faces in any of 18 frames sampled from the 6 latest shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "latest upload 439 days ago"
+   ],
+   "followers": "24.3K",
+   "median_views": 11756,
+   "like_rate": 0.0103,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 46820,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/misteruniverse00",
+    "read_at": "2026-11-07T01:54:21-05:00"
+   },
+   "latest_upload": "2025-08-24T21:00:05-07:00",
+   "url": "https://www.youtube.com/@misteruniverse00"
+  },
+  {
+   "handle": "@OddlySatisfying",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "No faces in any of 18 frames sampled from the 6 latest shorts. Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000"
+   ],
+   "followers": "4.36M",
+   "median_views": 9267,
+   "like_rate": 0.0087,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 1150209,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/oddlysatisfying",
+    "read_at": "2026-11-07T01:54:05-05:00"
+   },
+   "latest_upload": "2026-11-06T09:56:24-08:00",
+   "url": "https://www.youtube.com/@OddlySatisfying"
+  },
+  {
+   "handle": "@storys.meowia",
+   "platform": "YouTube",
+   "name": "Storys Meow ",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: YouTube \"How this was made\" label (sounds or visuals altered or fully generated) on 1/6 sampled shorts, e.g. https://www.youtube.com/shorts/dWQhhsSsOn8.",
+    "tells": [
+     "YouTube \"How this was made\" label (sounds or visuals altered or fully generated) on 1/6 sampled shorts, e.g. https://www.youtube.com/shorts/dWQhhsSsOn8"
+    ]
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: YouTube \"How this was made\" label (sounds or visuals altered or fully generated) on 1/6 sampled shorts, e.g. https://www.youtube.com/shorts/dWQhhsSsOn8. AI-generated content counts as faceless (no real human face verified). Faces in 5/18 frames, but no person recurs across shorts (stock/clip footage, no host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "median recent views below 100,000",
+    "latest upload 86 days ago"
+   ],
+   "followers": "3.8M",
+   "median_views": 4047,
+   "like_rate": 0.0104,
+   "socialblade": {
+    "days": 14,
+    "views_gained": 2920732,
+    "first": "2026-10-24",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/storys.meowia",
+    "read_at": "2026-11-07T01:54:17-05:00"
+   },
+   "latest_upload": "2026-08-12T05:39:36-07:00",
+   "url": "https://www.youtube.com/@storys.meowia"
+  },
+  {
+   "handle": "@naelacore",
+   "platform": "YouTube",
+   "name": "Naela ",
+   "deep_dived": true,
+   "ai_generated": {
+    "value": "no",
+    "evidence": "No AI disclosure label and no AI tells in 6 sampled shorts or the channel about text.",
+    "tells": []
+   },
+   "faceless_before": "yes",
+   "faceless_after": "yes",
+   "faceless_evidence": "Faces in 5/18 frames, but no person recurs across shorts (stock/clip footage, no host). Method: automated OpenCV YuNet face detection + SFace identity matching on YouTube frame thumbnails (hq1–hq3).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: unknown"
+   ],
+   "followers": "4.17K",
+   "median_views": 812,
+   "like_rate": null,
+   "socialblade": {
+    "days": 6,
+    "views_gained": 51684,
+    "first": "2026-10-25",
+    "last": "2026-11-07",
+    "url": "https://socialblade.com/youtube/handle/naelacore",
+    "read_at": "2026-11-07T01:54:19-05:00"
+   },
+   "latest_upload": "2026-11-06T15:30:20-08:00",
+   "url": "https://www.youtube.com/@naelacore"
+  },
+  {
+   "handle": "@faceless.inc.proj",
+   "platform": "TikTok",
+   "name": "FACELESS INCOME PROJECT",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "No public video text readable on this platform.",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "no public per-video view counts on this platform from reachable sources",
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "184,000",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.tiktok.com/@faceless.inc.proj"
+  },
+  {
+   "handle": "@the.darkfile.stories",
+   "platform": "TikTok",
+   "name": "Faceless stories",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "No public video text readable on this platform.",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "no public per-video view counts on this platform from reachable sources",
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "1",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.tiktok.com/@the.darkfile.stories"
+  },
+  {
+   "handle": "@Faceless-shorts-y1z",
+   "platform": "YouTube",
+   "name": "Faceless-shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Faceless-shorts-y1z"
+  },
+  {
+   "handle": "@FacelessBeautiful",
+   "platform": "YouTube",
+   "name": "Faceless Beautiful",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessBeautiful"
+  },
+  {
+   "handle": "@MonsGuide",
+   "platform": "YouTube",
+   "name": "MonsGuide",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@MonsGuide"
+  },
+  {
+   "handle": "@FacelessShorts-r5z8o",
+   "platform": "YouTube",
+   "name": "Faceless Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessShorts-r5z8o"
+  },
+  {
+   "handle": "@FacelessChannelShorts",
+   "platform": "YouTube",
+   "name": "Faceless Channel Shorts ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessChannelShorts"
+  },
+  {
+   "handle": "@FShorts17",
+   "platform": "YouTube",
+   "name": "Faceless Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FShorts17"
+  },
+  {
+   "handle": "@Facelessshorts-p8x",
+   "platform": "YouTube",
+   "name": "Faceless shorts😁",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Facelessshorts-p8x"
+  },
+  {
+   "handle": "@Facelesschannel0001",
+   "platform": "YouTube",
+   "name": "Faceless Channel",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Facelesschannel0001"
+  },
+  {
+   "handle": "@FacelessShorts-y2n",
+   "platform": "YouTube",
+   "name": "Faceless Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessShorts-y2n"
+  },
+  {
+   "handle": "@FacelessShorts-k6n",
+   "platform": "YouTube",
+   "name": "Faceless Shorts ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessShorts-k6n"
+  },
+  {
+   "handle": "@FacelessShorts-i8p",
+   "platform": "YouTube",
+   "name": "Faceless Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessShorts-i8p"
+  },
+  {
+   "handle": "@facelessshorts-b3z",
+   "platform": "YouTube",
+   "name": "faceless shorts ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@facelessshorts-b3z"
+  },
+  {
+   "handle": "@FacelessShorts-y5f",
+   "platform": "YouTube",
+   "name": "Faceless Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessShorts-y5f"
+  },
+  {
+   "handle": "@facelessshortsai",
+   "platform": "YouTube",
+   "name": "Faceless Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@facelessshortsai"
+  },
+  {
+   "handle": "@TheFacelessShortz",
+   "platform": "YouTube",
+   "name": "Faceless Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@TheFacelessShortz"
+  },
+  {
+   "handle": "@FacelessYouTubeChannel-k8v",
+   "platform": "YouTube",
+   "name": "Shorts 456",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessYouTubeChannel-k8v"
+  },
+  {
+   "handle": "@AiFacelessChannel",
+   "platform": "YouTube",
+   "name": "Ai Faceless Channel",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: #ai, Elevenlabs.",
+    "tells": [
+     "channel name/about text: #ai, Elevenlabs"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: #ai, Elevenlabs. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AiFacelessChannel"
+  },
+  {
+   "handle": "@isaacverse",
+   "platform": "YouTube",
+   "name": "Isaac",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@isaacverse"
+  },
+  {
+   "handle": "@Romayroh",
+   "platform": "YouTube",
+   "name": "Romayroh",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Romayroh"
+  },
+  {
+   "handle": "@FacelessAIShorts-i6p",
+   "platform": "YouTube",
+   "name": "Faceless AI Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FacelessAIShorts-i6p"
+  },
+  {
+   "handle": "@KoleReads",
+   "platform": "YouTube",
+   "name": "KoleReads",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@KoleReads"
+  },
+  {
+   "handle": "@Unlimited.Stories",
+   "platform": "YouTube",
+   "name": "UnlimitedStories",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Unlimited.Stories"
+  },
+  {
+   "handle": "@Broken.Stories",
+   "platform": "YouTube",
+   "name": "BrokenStories",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Broken.Stories"
+  },
+  {
+   "handle": "@cooperreddit",
+   "platform": "YouTube",
+   "name": "Cooper Reddit",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@cooperreddit"
+  },
+  {
+   "handle": "@Requestedreads",
+   "platform": "YouTube",
+   "name": "Requested Reads",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Requestedreads"
+  },
+  {
+   "handle": "@redditstories_dino",
+   "platform": "YouTube",
+   "name": "Reddit Dino",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@redditstories_dino"
+  },
+  {
+   "handle": "@redditstoryshorts33",
+   "platform": "YouTube",
+   "name": "Reddit Story Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@redditstoryshorts33"
+  },
+  {
+   "handle": "@short.redditstoriess",
+   "platform": "YouTube",
+   "name": "Reddit Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@short.redditstoriess"
+  },
+  {
+   "handle": "@redditdramatale",
+   "platform": "YouTube",
+   "name": "Reddit Drama Tales",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@redditdramatale"
+  },
+  {
+   "handle": "@reditstoriesshorts",
+   "platform": "YouTube",
+   "name": "reddit stories shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@reditstoriesshorts"
+  },
+  {
+   "handle": "@redditstoriesshorts6798",
+   "platform": "YouTube",
+   "name": "Reddit Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@redditstoriesshorts6798"
+  },
+  {
+   "handle": "@RedditStories-Shorts-r1z",
+   "platform": "YouTube",
+   "name": "Reddit Stories-Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@RedditStories-Shorts-r1z"
+  },
+  {
+   "handle": "@Redditstoriesshorts-d9t",
+   "platform": "YouTube",
+   "name": "Reddit stories shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Redditstoriesshorts-d9t"
+  },
+  {
+   "handle": "@RedditStoriesShorts-y3d",
+   "platform": "YouTube",
+   "name": "Reddit Stories Shorts ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@RedditStoriesShorts-y3d"
+  },
+  {
+   "handle": "@RedditStoriesShorts-zc4xi",
+   "platform": "YouTube",
+   "name": "Reddit Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@RedditStoriesShorts-zc4xi"
+  },
+  {
+   "handle": "@RedditStoriesInShorts",
+   "platform": "YouTube",
+   "name": "Reddit Stories in Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@RedditStoriesInShorts"
+  },
+  {
+   "handle": "@redditstoriesshorts9125",
+   "platform": "YouTube",
+   "name": "Reddit Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@redditstoriesshorts9125"
+  },
+  {
+   "handle": "@redditstoriesShorts-g2w",
+   "platform": "YouTube",
+   "name": "reddit stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@redditstoriesShorts-g2w"
+  },
+  {
+   "handle": "@Redditstoriesshorts-yj2ox",
+   "platform": "YouTube",
+   "name": "Reddit stories shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Redditstoriesshorts-yj2ox"
+  },
+  {
+   "handle": "@redditstoriesshorts-m8j",
+   "platform": "YouTube",
+   "name": "Reddit Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@redditstoriesshorts-m8j"
+  },
+  {
+   "handle": "@iamucfresh",
+   "platform": "YouTube",
+   "name": "Do you know facts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@iamucfresh"
+  },
+  {
+   "handle": "@DidYouKnow-skp",
+   "platform": "YouTube",
+   "name": "Did You Know?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DidYouKnow-skp"
+  },
+  {
+   "handle": "@NaturalHabitatShorts",
+   "platform": "YouTube",
+   "name": "Natural Habitat Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@NaturalHabitatShorts"
+  },
+  {
+   "handle": "@FactsSoUseless",
+   "platform": "YouTube",
+   "name": "Useless Facts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FactsSoUseless"
+  },
+  {
+   "handle": "@didyouknowthatyoutube",
+   "platform": "YouTube",
+   "name": "Did You Know That?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@didyouknowthatyoutube"
+  },
+  {
+   "handle": "@Didyouknow-s67w",
+   "platform": "YouTube",
+   "name": "Did you know (Facts)? ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Didyouknow-s67w"
+  },
+  {
+   "handle": "@DidYouKnow-993",
+   "platform": "YouTube",
+   "name": "Did You Know?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DidYouKnow-993"
+  },
+  {
+   "handle": "@Did-You-Know305",
+   "platform": "YouTube",
+   "name": "Did You Know",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Did-You-Know305"
+  },
+  {
+   "handle": "@DidYouKnow-u5r",
+   "platform": "YouTube",
+   "name": "Did You Know?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DidYouKnow-u5r"
+  },
+  {
+   "handle": "@didyouknow_7vh",
+   "platform": "YouTube",
+   "name": "did you know",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@didyouknow_7vh"
+  },
+  {
+   "handle": "@MindPulseFacts_MA",
+   "platform": "YouTube",
+   "name": "MindPulse Facts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@MindPulseFacts_MA"
+  },
+  {
+   "handle": "@DidYouKnowFacts-h1z",
+   "platform": "YouTube",
+   "name": "@DidYouKnowFacts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DidYouKnowFacts-h1z"
+  },
+  {
+   "handle": "@didyouknow-z4n",
+   "platform": "YouTube",
+   "name": "Did you know?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@didyouknow-z4n"
+  },
+  {
+   "handle": "@didyouknowthis16",
+   "platform": "YouTube",
+   "name": "Did you know this?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@didyouknowthis16"
+  },
+  {
+   "handle": "@Didyouknow-v8f",
+   "platform": "YouTube",
+   "name": "Did you know?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Didyouknow-v8f"
+  },
+  {
+   "handle": "@DidYouKnowUSA-x4j",
+   "platform": "YouTube",
+   "name": "Did You Know USA?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DidYouKnowUSA-x4j"
+  },
+  {
+   "handle": "@Didyouknowthat-RB",
+   "platform": "YouTube",
+   "name": "Did You Know?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Didyouknowthat-RB"
+  },
+  {
+   "handle": "@Diddyouuknoww",
+   "platform": "YouTube",
+   "name": "Did you know?",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Diddyouuknoww"
+  },
+  {
+   "handle": "@DidYouKnowFacts-v9n",
+   "platform": "YouTube",
+   "name": "Did You Know Facts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DidYouKnowFacts-v9n"
+  },
+  {
+   "handle": "@DidYouKnow-e8o",
+   "platform": "YouTube",
+   "name": "DidYouKnow",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DidYouKnow-e8o"
+  },
+  {
+   "handle": "@TawfikNCV",
+   "platform": "YouTube",
+   "name": "Tawfik",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@TawfikNCV"
+  },
+  {
+   "handle": "@shortsmotivation7004",
+   "platform": "YouTube",
+   "name": "Shorts Motivation",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@shortsmotivation7004"
+  },
+  {
+   "handle": "@stillrisemotivation-d2l",
+   "platform": "YouTube",
+   "name": "𝙎𝙩𝙞𝙡𝙡𝙍𝙞𝙨𝙚 𝙈𝙤𝙩𝙞𝙫𝙖𝙩𝙞𝙤𝙣",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@stillrisemotivation-d2l"
+  },
+  {
+   "handle": "@motivationstock5127",
+   "platform": "YouTube",
+   "name": "Motivation Stock",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@motivationstock5127"
+  },
+  {
+   "handle": "@mveimpulse",
+   "platform": "YouTube",
+   "name": "Motivation Video English",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@mveimpulse"
+  },
+  {
+   "handle": "@Motivation_Stock_Videos",
+   "platform": "YouTube",
+   "name": "Motivation Stock Videos ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Motivation_Stock_Videos"
+  },
+  {
+   "handle": "@motivationalstock30",
+   "platform": "YouTube",
+   "name": "Motivational Stock",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@motivationalstock30"
+  },
+  {
+   "handle": "@gymmotivation9267",
+   "platform": "YouTube",
+   "name": "Gym Motivation",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@gymmotivation9267"
+  },
+  {
+   "handle": "@MotivationAdam",
+   "platform": "YouTube",
+   "name": "Motivation Adam",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@MotivationAdam"
+  },
+  {
+   "handle": "@motivationalupgrade",
+   "platform": "YouTube",
+   "name": "MotivationalUpgrade",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@motivationalupgrade"
+  },
+  {
+   "handle": "@stockmotivation2895",
+   "platform": "YouTube",
+   "name": "Stock Motivation",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@stockmotivation2895"
+  },
+  {
+   "handle": "@VenusRiseMotivation",
+   "platform": "YouTube",
+   "name": "VenusRiseMotivation",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@VenusRiseMotivation"
+  },
+  {
+   "handle": "@motivationu8635",
+   "platform": "YouTube",
+   "name": "Motivation U",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@motivationu8635"
+  },
+  {
+   "handle": "@letsmotivated10",
+   "platform": "YouTube",
+   "name": "@Let's Motivated",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@letsmotivated10"
+  },
+  {
+   "handle": "@TheHigherDimension",
+   "platform": "YouTube",
+   "name": "The Higher Dimension",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@TheHigherDimension"
+  },
+  {
+   "handle": "@DeepFocusMotivation",
+   "platform": "YouTube",
+   "name": "Deep Focus Motivation",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DeepFocusMotivation"
+  },
+  {
+   "handle": "@motivationgrounds",
+   "platform": "YouTube",
+   "name": "Motivation Grounds",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@motivationgrounds"
+  },
+  {
+   "handle": "@DailyQuote2000",
+   "platform": "YouTube",
+   "name": "Video Warehouse",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DailyQuote2000"
+  },
+  {
+   "handle": "@motivationstock12346",
+   "platform": "YouTube",
+   "name": "motivation stock",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@motivationstock12346"
+  },
+  {
+   "handle": "@coachpain8129",
+   "platform": "YouTube",
+   "name": "Coach Pain",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@coachpain8129"
+  },
+  {
+   "handle": "@satisfyingshorts.official",
+   "platform": "YouTube",
+   "name": "Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@satisfyingshorts.official"
+  },
+  {
+   "handle": "@SatisfyingLips",
+   "platform": "YouTube",
+   "name": "Satisfying Lips",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@SatisfyingLips"
+  },
+  {
+   "handle": "@DailyOddlySatisfyingShorts",
+   "platform": "YouTube",
+   "name": "Daily Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DailyOddlySatisfyingShorts"
+  },
+  {
+   "handle": "@andrewmartinho2010",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@andrewmartinho2010"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts7032",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying shorts ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts7032"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts4738",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts4738"
+  },
+  {
+   "handle": "@OddlySatisfyingShorst",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@OddlySatisfyingShorst"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts6084",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts6084"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts3482",
+   "platform": "YouTube",
+   "name": "Oddly satisfying shorts ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts3482"
+  },
+  {
+   "handle": "@oddlysatisfying-shorts4988",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying - Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfying-shorts4988"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts5337",
+   "platform": "YouTube",
+   "name": " Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts5337"
+  },
+  {
+   "handle": "@ASMRVIDEOS-s92",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@ASMRVIDEOS-s92"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts2507",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts2507"
+  },
+  {
+   "handle": "@keithanderson5913",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@keithanderson5913"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts4925",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts4925"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts6686",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts6686"
+  },
+  {
+   "handle": "@OddlySatisfyingShorts-bt6cv",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@OddlySatisfyingShorts-bt6cv"
+  },
+  {
+   "handle": "@oddlysatisfying-xo9ed5pd7q",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfying-xo9ed5pd7q"
+  },
+  {
+   "handle": "@oddlysatisfyingshorts1728",
+   "platform": "YouTube",
+   "name": "Oddly Satisfying Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oddlysatisfyingshorts1728"
+  },
+  {
+   "handle": "@aifruitstories-333",
+   "platform": "YouTube",
+   "name": "AI Fruit Stories ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@aifruitstories-333"
+  },
+  {
+   "handle": "@AlphaTales-AIStories",
+   "platform": "YouTube",
+   "name": "🐺 Alpha Tales-AI Stories",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI Stories, AI-powered.",
+    "tells": [
+     "channel name/about text: AI Stories, AI-powered"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI Stories, AI-powered. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AlphaTales-AIStories"
+  },
+  {
+   "handle": "@TheAIStoryShortson",
+   "platform": "YouTube",
+   "name": "AI Story Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI Story, AI-Powered.",
+    "tells": [
+     "channel name/about text: AI Story, AI-Powered"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI Story, AI-Powered. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@TheAIStoryShortson"
+  },
+  {
+   "handle": "@Shanokhan-b7m",
+   "platform": "YouTube",
+   "name": "Ai stories by shano",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI Stories, Ai stories, AI-generated, made by AI.",
+    "tells": [
+     "channel name/about text: AI Stories, Ai stories, AI-generated, made by AI"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI Stories, Ai stories, AI-generated, made by AI. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Shanokhan-b7m"
+  },
+  {
+   "handle": "@AiStory342",
+   "platform": "YouTube",
+   "name": "Shorts Ai Story",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: Ai Story.",
+    "tells": [
+     "channel name/about text: Ai Story"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: Ai Story. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AiStory342"
+  },
+  {
+   "handle": "@AIStoryShorts1-o4e",
+   "platform": "YouTube",
+   "name": "AI Story Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI Story, AI-generated.",
+    "tells": [
+     "channel name/about text: AI Story, AI-generated"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI Story, AI-generated. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AIStoryShorts1-o4e"
+  },
+  {
+   "handle": "@aistoryshorts-i8m",
+   "platform": "YouTube",
+   "name": "ai story shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI animation, AI Baby, AI Story, ai story, AI-generated.",
+    "tells": [
+     "channel name/about text: AI animation, AI Baby, AI Story, ai story, AI-generated"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI animation, AI Baby, AI Story, ai story, AI-generated. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@aistoryshorts-i8m"
+  },
+  {
+   "handle": "@AI.videos.ronaldo",
+   "platform": "YouTube",
+   "name": "AI Videos Ronaldo",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI Videos.",
+    "tells": [
+     "channel name/about text: AI Videos"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI Videos. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AI.videos.ronaldo"
+  },
+  {
+   "handle": "@Aishortstory-x1c",
+   "platform": "YouTube",
+   "name": "Ai short story ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI animations, AI Story, AI-powered.",
+    "tells": [
+     "channel name/about text: AI animations, AI Story, AI-powered"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI animations, AI Story, AI-powered. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Aishortstory-x1c"
+  },
+  {
+   "handle": "@aistorieswithrachel",
+   "platform": "YouTube",
+   "name": "AI Stories with Rachel ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI Stories, AI-generated.",
+    "tells": [
+     "channel name/about text: AI Stories, AI-generated"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI Stories, AI-generated. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@aistorieswithrachel"
+  },
+  {
+   "handle": "@Drama-j1y",
+   "platform": "YouTube",
+   "name": "Drama shorts Ai",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI-generated.",
+    "tells": [
+     "channel name/about text: AI-generated"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI-generated. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Drama-j1y"
+  },
+  {
+   "handle": "@AIstoryshorts-i8w2n",
+   "platform": "YouTube",
+   "name": "AI story shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI story.",
+    "tells": [
+     "channel name/about text: AI story"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI story. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AIstoryshorts-i8w2n"
+  },
+  {
+   "handle": "@AIStoriesShort-t5d",
+   "platform": "YouTube",
+   "name": "AI Stories Short",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: Ai stories, AI Stories, AI-generated.",
+    "tells": [
+     "channel name/about text: Ai stories, AI Stories, AI-generated"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: Ai stories, AI Stories, AI-generated. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AIStoriesShort-t5d"
+  },
+  {
+   "handle": "@RudraneelGour",
+   "platform": "YouTube",
+   "name": "Ai daily story shorts ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: #AI, #AIStory, #AIVideo, AI stories, AI videos.",
+    "tells": [
+     "channel name/about text: #AI, #AIStory, #AIVideo, AI stories, AI videos"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: #AI, #AIStory, #AIVideo, AI stories, AI videos. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@RudraneelGour"
+  },
+  {
+   "handle": "@Apaishorts07",
+   "platform": "YouTube",
+   "name": "Ap Ai Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Apaishorts07"
+  },
+  {
+   "handle": "@Aistorysvideos-w8w",
+   "platform": "YouTube",
+   "name": "AI STORY'S 2.2",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: Ai stories, ai story, AI STORY.",
+    "tells": [
+     "channel name/about text: Ai stories, ai story, AI STORY"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: Ai stories, ai story, AI STORY. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Aistorysvideos-w8w"
+  },
+  {
+   "handle": "@AIstoryshorts-o2n",
+   "platform": "YouTube",
+   "name": "AI story shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: AI story.",
+    "tells": [
+     "channel name/about text: AI story"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: AI story. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AIstoryshorts-o2n"
+  },
+  {
+   "handle": "@ShortsaiStory-d6l",
+   "platform": "YouTube",
+   "name": "Shorts ai story",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: ai story.",
+    "tells": [
+     "channel name/about text: ai story"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: ai story. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@ShortsaiStory-d6l"
+  },
+  {
+   "handle": "@DarijaAInetherland",
+   "platform": "YouTube",
+   "name": "AI content stories ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@DarijaAInetherland"
+  },
+  {
+   "handle": "@Ai_Stories_By_AH",
+   "platform": "YouTube",
+   "name": "Ai Stories By AH🇬🇧 ",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "yes",
+    "evidence": "AI-generated content: channel name/about text: Ai Stories.",
+    "tells": [
+     "channel name/about text: Ai Stories"
+    ]
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "yes",
+   "faceless_evidence": "AI-generated content: channel name/about text: Ai Stories. AI-generated content counts as faceless (no real human face verified). Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Ai_Stories_By_AH"
+  },
+  {
+   "handle": "@HorrorShortsParty",
+   "platform": "YouTube",
+   "name": "Horror Shorts Party",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@HorrorShortsParty"
+  },
+  {
+   "handle": "@UnwholesomePenguin",
+   "platform": "YouTube",
+   "name": "UnwholesomePenguin",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@UnwholesomePenguin"
+  },
+  {
+   "handle": "@WatchALTER",
+   "platform": "YouTube",
+   "name": "ALTER",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@WatchALTER"
+  },
+  {
+   "handle": "@ScaryStoriesShortsss",
+   "platform": "YouTube",
+   "name": "Scary Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@ScaryStoriesShortsss"
+  },
+  {
+   "handle": "@sssstories",
+   "platform": "YouTube",
+   "name": "SSS Scary Shorts Stories",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@sssstories"
+  },
+  {
+   "handle": "@mrballenshorts",
+   "platform": "YouTube",
+   "name": "MrBallen Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@mrballenshorts"
+  },
+  {
+   "handle": "@IMRScaryTales",
+   "platform": "YouTube",
+   "name": "IMR Scary Tales",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@IMRScaryTales"
+  },
+  {
+   "handle": "@Crypttv",
+   "platform": "YouTube",
+   "name": "Crypt TV",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Crypttv"
+  },
+  {
+   "handle": "@LlamaArts",
+   "platform": "YouTube",
+   "name": "Llama Arts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@LlamaArts"
+  },
+  {
+   "handle": "@FascinatingHorror",
+   "platform": "YouTube",
+   "name": "Fascinating Horror",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@FascinatingHorror"
+  },
+  {
+   "handle": "@AnimatedHorrorFlicks",
+   "platform": "YouTube",
+   "name": "Animated Horror Flicks",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@AnimatedHorrorFlicks"
+  },
+  {
+   "handle": "@SSTORIES99",
+   "platform": "YouTube",
+   "name": "Scary Stories SHORTS",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@SSTORIES99"
+  },
+  {
+   "handle": "@theScaryStoriesShorts",
+   "platform": "YouTube",
+   "name": "Scary Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@theScaryStoriesShorts"
+  },
+  {
+   "handle": "@Void-13-13",
+   "platform": "YouTube",
+   "name": "Scary Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Void-13-13"
+  },
+  {
+   "handle": "@TrueHorrorStoriesPOV",
+   "platform": "YouTube",
+   "name": "True Horror Stories POV",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@TrueHorrorStoriesPOV"
+  },
+  {
+   "handle": "@BloxyHorrorStories",
+   "platform": "YouTube",
+   "name": "Bloxy Horror Stories",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@BloxyHorrorStories"
+  },
+  {
+   "handle": "@oaksfrever585",
+   "platform": "YouTube",
+   "name": "Oaksfrever",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@oaksfrever585"
+  },
+  {
+   "handle": "@JumpersJumps_Shorts",
+   "platform": "YouTube",
+   "name": "JumpersJumps Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@JumpersJumps_Shorts"
+  },
+  {
+   "handle": "@mrnightmare",
+   "platform": "YouTube",
+   "name": "Mr. Nightmare",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@mrnightmare"
+  },
+  {
+   "handle": "@ScaryStoriesShorts-w4f",
+   "platform": "YouTube",
+   "name": "Scary Stories Shorts",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@ScaryStoriesShorts-w4f"
+  },
+  {
+   "handle": "@HiddenWorld-l2u",
+   "platform": "YouTube",
+   "name": "Hidden World",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@HiddenWorld-l2u"
+  },
+  {
+   "handle": "@ReadifyStories",
+   "platform": "YouTube",
+   "name": "Readify Stories",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@ReadifyStories"
+  },
+  {
+   "handle": "@RedditZephys",
+   "platform": "YouTube",
+   "name": "Reddit Zephys",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@RedditZephys"
+  },
+  {
+   "handle": "@memomemes21",
+   "platform": "YouTube",
+   "name": "memom",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "179K",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@memomemes21"
+  },
+  {
+   "handle": "@TheMemeSheep1",
+   "platform": "YouTube",
+   "name": "The Meme Sheep",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "1.72M",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@TheMemeSheep1"
+  },
+  {
+   "handle": "@BeeyondInstinct",
+   "platform": "YouTube",
+   "name": "Beeyond instinct",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "40.3K",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@BeeyondInstinct"
+  },
+  {
+   "handle": "@Hornstromp3D",
+   "platform": "YouTube",
+   "name": "Hornstromp 3D",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "1.14M",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Hornstromp3D"
+  },
+  {
+   "handle": "@Useepy",
+   "platform": "YouTube",
+   "name": "Useepy",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "12.6K",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Useepy"
+  },
+  {
+   "handle": "@WorldOfStickboi",
+   "platform": "YouTube",
+   "name": "World Of Stickboi",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "328K",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@WorldOfStickboi"
+  },
+  {
+   "handle": "@MemeUniverseYT",
+   "platform": "YouTube",
+   "name": "Meme Universe",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run"
+   ],
+   "followers": "234K",
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@MemeUniverseYT"
+  },
+  {
+   "handle": "@Redditor",
+   "platform": "YouTube",
+   "name": "Redditor",
+   "deep_dived": false,
+   "ai_generated": {
+    "value": "unknown",
+    "evidence": "Not enough public text read to judge (channel not deep-dived this cycle).",
+    "tells": []
+   },
+   "faceless_before": "unknown",
+   "faceless_after": "unknown",
+   "faceless_evidence": "Not enough public frames checked (needs ≥6 frames from ≥3 recent videos; not available for this platform/source).",
+   "qualified_before": false,
+   "qualified_after": false,
+   "not_qualified_because": [
+    "fewer than 4 recent shorts with exact views + likes",
+    "median recent views below 100,000",
+    "faceless check: unknown",
+    "engagement check: not run",
+    "follower count not read"
+   ],
+   "followers": null,
+   "median_views": null,
+   "like_rate": null,
+   "socialblade": null,
+   "latest_upload": null,
+   "url": "https://www.youtube.com/@Redditor"
+  }
+ ]
+}

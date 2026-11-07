@@ -1,7 +1,35 @@
 {
-  "note": "Manual faceless reviews: a person looked at the public frame thumbnails (hq1–hq3) of the channel's latest shorts. Overrides the automated face check. Each entry is dated; re-review if the channel's format changes.",
-  "reviews": {
-    "@justicebuys1": {"faceless": "no", "reviewed_at": "2026-11-07T01:38:00-05:00", "evidence": "A presenter (man in a blue shirt) appears on camera, face visible, in product demos among the latest shorts (e.g. youtube.com/shorts/zeVyI2bB_qQ)."},
-    "@BoltMotivationYT": {"faceless": "yes", "reviewed_at": "2026-11-07T01:38:00-05:00", "evidence": "Edited compilations of third-party clips (boxers, athletes, viral moments) with bold caption overlays; the channel owner never appears. Note: built on other people's footage — replicate the edit style with licensed/original footage only."}
+ "note": "Manual faceless reviews: a person looked at the public frame thumbnails (hq1–hq3) of the channel's latest shorts. Overrides the automated face check. Each entry is dated; re-review if the channel's format changes. Since Nov 7 2026 (Joey's rule): AI-generated content counts as faceless; AI-generated faces/avatars are not real humans. A real human face on camera still fails.",
+ "reviews": {
+  "@justicebuys1": {
+   "faceless": "no",
+   "reviewed_at": "2026-11-07T01:38:00-05:00",
+   "evidence": "A presenter (man in a blue shirt) appears on camera, face visible, in product demos among the latest shorts (e.g. youtube.com/shorts/zeVyI2bB_qQ)."
+  },
+  "@BoltMotivationYT": {
+   "faceless": "yes",
+   "reviewed_at": "2026-11-07T01:38:00-05:00",
+   "evidence": "Edited compilations of third-party clips (boxers, athletes, viral moments) with bold caption overlays; the channel owner never appears. Note: built on other people's footage — replicate the edit style with licensed/original footage only."
+  },
+  "@AIMagicalFamily": {
+   "faceless": "yes",
+   "reviewed_at": "2026-11-07T02:14:00-05:00",
+   "evidence": "AI-generated content: the recurring 'faces' are AI-generated people in AI family stories (YouTube 'How this was made: altered or fully generated' label on 6/6 sampled shorts; descriptions say 'AI-generated story'). No real human host. Counts as faceless under the AI rule."
+  },
+  "@HistoryHideout": {
+   "faceless": "yes",
+   "reviewed_at": "2026-11-07T02:14:00-05:00",
+   "evidence": "AI-generated content: frames are AI-generated portrait images of historical figures (titles/descriptions tag #ai, AI art, Midjourney). No real human host appears. Counts as faceless under the AI rule."
+  },
+  "@FactsMine": {
+   "faceless": "no",
+   "reviewed_at": "2026-11-07T02:14:00-05:00",
+   "evidence": "A real human presenter (same man) talks to camera in the latest shorts (e.g. youtube.com/shorts/bkVu2sjvoqU). No AI disclosure label or AI tells. Fails faceless."
+  },
+  "@AstroKobi": {
+   "faceless": "no",
+   "reviewed_at": "2026-11-07T02:14:00-05:00",
+   "evidence": "A real human presenter talks to camera in front of a microphone in most of the latest shorts. No AI disclosure label or AI tells. Fails faceless."
   }
+ }
 }

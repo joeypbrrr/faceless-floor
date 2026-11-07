@@ -57,7 +57,13 @@ See `seeds` in `config/discovery.json`. Every seed was opened and its numbers re
 ## Faceless check
 - **Automated:** OpenCV YuNet face detection plus SFace identity matching on YouTube's public frame thumbnails (hq1–hq3) of the 6 latest shorts.
 - **Faceless** means no person recurs on camera across 2 or more of those shorts.
-- **Manual reviews** (dated, with evidence) live in `config/reviews.json` and override the automated check. Example: `@justicebuys1` failed review because a presenter appears on camera.
+- **AI-generated content counts as faceless** (Joey's rule, Nov 7, 2026). AI voiceover, AI images or video, AI avatars and synthetic narration are a *positive* faceless signal, never a disqualifier. Each candidate gets an `ai_generated` flag (`yes` / `no` / `unknown`) with evidence:
+  - `yes` when YouTube's own "How this was made: sounds or visuals were altered or fully generated" label is on at least 1 sampled short, or AI tells (e.g. "AI-generated", "made with AI", "AI story", "AI voice", `#ai…` tags, Midjourney, ElevenLabs, Sora, Veo, Kling, Hailuo, text-to-speech) appear in the titles/descriptions of at least 2 sampled shorts, or the channel name/about text describes its content as AI-made.
+  - `no` when 3+ shorts and the about text were read with no label and no tells. That means no public AI evidence, not proof of human production.
+  - `unknown` when not enough public text was read.
+  - `ai_generated = yes` sets faceless to **yes**. The exception is a face recurring across 3+ shorts: the detector can't tell an AI face from a real one, so the verdict is **unclear** until a dated manual review says AI face (faceless) or real human (fails).
+  - An AI-generated face or avatar is not a real human and counts as faceless. A real human's face on camera still fails. All other criteria (views, recency, engagement, followers) are unchanged.
+- **Manual reviews** (dated, with evidence) live in `config/reviews.json` and override the automated check. Example: `@justicebuys1` failed review because a presenter appears on camera; `@AIMagicalFamily` passed because its recurring faces are AI-generated people.
 
 ## Replication rule
 Notes describe **formats, hooks, length and cadence only**. Make original scripts and use our own or licensed footage. Never repost anyone's content.
