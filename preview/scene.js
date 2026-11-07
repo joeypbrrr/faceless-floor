@@ -48,8 +48,8 @@ sun.shadow.mapSize.set(small?1024:2048,small?1024:2048);Object.assign(sun.shadow
 // ---------- EXTERIOR ----------
 const ext=new T.Group();scene.add(ext);
 const stoneTex=canvasTex(512,512,(g,w,h)=>{g.fillStyle='#5b5650';g.fillRect(0,0,w,h);for(let y=0;y<8;y++)for(let x=0;x<8;x++){const v=82+((rand()*18)|0);g.fillStyle=`rgb(${v+6},${v+2},${v-4})`;g.fillRect(x*64+2,y*64+2,60,60);}});
-stoneTex.wrapS=stoneTex.wrapT=T.RepeatWrapping;stoneTex.repeat.set(14,8);
-add(ext,new T.BoxGeometry(110,.4,62),std(0xffffff,.85,0,{map:stoneTex}),0,-.2,-4,{cast:false});
+stoneTex.wrapS=stoneTex.wrapT=T.RepeatWrapping;stoneTex.repeat.set(16,10);
+add(ext,new T.BoxGeometry(130,.4,80),std(0xffffff,.85,0,{map:stoneTex}),0,-.2,-14,{cast:false});
 add(ext,new T.BoxGeometry(220,.3,16),std(0x1c1d24,.55,.1),0,-.25,34,{cast:false});
 for(let x=-100;x<=100;x+=8)add(ext,new T.BoxGeometry(3.6,.02,.22),std(0xe8d9b0,.6,0,{emissive:0x3a3320}),x,-.09,34,{cast:false});
 add(ext,new T.BoxGeometry(220,.35,1.2),std(0x77716a),0,0,26,{cast:false});add(ext,new T.BoxGeometry(220,.35,1.2),std(0x77716a),0,0,42,{cast:false});
@@ -72,11 +72,14 @@ const door=add(ext,new T.BoxGeometry(3,5.2,.15),std(0x3a2410,.25,.3,{emissive:0x
 add(ext,new T.BoxGeometry(3.8,.3,.5),bronze,0,7.9,9.1);
 // tower with lit windows
 function windowTex(cols,rows,warm,seed){return canvasTex(cols*16,rows*16,(g,w,h)=>{g.fillStyle='#1a1d27';g.fillRect(0,0,w,h);for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const on=rand()<(warm?.55:.4);g.fillStyle=on?(warm?(rand()<.5?'#ffcf8a':'#ffe2b3'):(rand()<.5?'#bcd6ff':'#ffe6c0')):'#232838';g.fillRect(x*16+3,y*16+3,10,10);}});}
-function tower(x,z,w,h,d,warm,color){const tex=windowTex(Math.round(w*1.6),Math.round(h*1.2),warm);const m=std(color,.4,.35,{map:tex,emissive:0xffffff,emissiveMap:tex,emissiveIntensity:.85});add(ext,new T.BoxGeometry(w,h,d),m,x,h/2,z);return m;}
-tower(0,-10,18,38,12,true,0xb9ac96);add(ext,new T.BoxGeometry(19,1.2,13),ivory,0,38.6,-10);add(ext,new T.BoxGeometry(12,4,8),ivory,0,41,-10);
-add(ext,new T.ConeGeometry(4.6,6,4),bronze,0,46,-10).rotation.y=Math.PI/4;
-const beacon=add(ext,new T.SphereGeometry(.45,16,12),std(0xff5a3a,.3,0,{emissive:0xff4a2a,emissiveIntensity:3}),0,49.4,-10,{cast:false});
-for(const [x,z,w,h,d] of [[-32,-6,12,30,12],[32,-8,13,44,13],[-48,-22,14,56,14],[50,-26,14,34,14],[-20,-34,12,48,12],[22,-36,12,60,12]])tower(x,z,w,h,d,false,0x7f8aa3);
+const towers=[];// towers fade when they sit between the camera and its target, so no orbit angle is blocked
+function tower(x,z,w,h,d,warm,color,extra=0){const tex=windowTex(Math.round(w*1.6),Math.round(h*1.2),warm);const m=std(color,.4,.35,{map:tex,emissive:0xffffff,emissiveMap:tex,emissiveIntensity:.85,transparent:true});add(ext,new T.BoxGeometry(w,h,d),m,x,h/2,z);towers.push({box:new T.Box3(new T.Vector3(x-w/2,0,z-d/2),new T.Vector3(x+w/2,h+extra,z+d/2)),mats:[m],o:1});return m;}
+// HQ tower stands on its own lot behind the exchange: exchange back wall is z=-6, tower front is z=-16 (10-unit alley).
+const TZ=-22;tower(0,TZ,18,38,12,true,0xb9ac96,12);{const cr=[ivory.clone(),ivory.clone(),bronze.clone()];cr.forEach(m=>m.transparent=true);add(ext,new T.BoxGeometry(19,1.2,13),cr[0],0,38.6,TZ);add(ext,new T.BoxGeometry(12,4,8),cr[1],0,41,TZ);
+add(ext,new T.ConeGeometry(4.6,6,4),cr[2],0,46,TZ).rotation.y=Math.PI/4;towers[towers.length-1].mats.push(...cr);}
+const beacon=add(ext,new T.SphereGeometry(.45,16,12),std(0xff5a3a,.3,0,{emissive:0xff4a2a,emissiveIntensity:3}),0,49.4,TZ,{cast:false});
+add(ext,new T.BoxGeometry(46,.04,8),std(0x1c1d24,.55,.1),0,.02,-11,{cast:false});
+for(const [x,z,w,h,d] of [[-34,-6,12,30,12],[35,-8,13,44,13],[-50,-24,14,56,14],[52,-28,14,34,14],[-24,-38,12,48,12],[25,-40,12,60,12]])tower(x,z,w,h,d,false,0x7f8aa3);
 // lamps, planters, flags
 const lampMat=std(0x1f1d1b,.4,.8),bulb=std(0xfff1d6,.2,0,{emissive:0xffcf8f,emissiveIntensity:2.6});
 for(let x=-24;x<=24;x+=8){if(Math.abs(x)<4)continue;add(ext,new T.CylinderGeometry(.12,.18,5.2,10),lampMat,x,2.6,22);add(ext,new T.SphereGeometry(.42,16,12),bulb,x,5.4,22,{cast:false});}
@@ -168,11 +171,12 @@ resize();placeCamera(view);new ResizeObserver(resize).observe(wrap);applyVisibil
 document.fonts?.ready.then(()=>{drawFeed();drawTop();});
 let feedOff=0;setInterval(()=>{drawFeed(++feedOff);},2600);
 // ---------- loop ----------
-const clock=new T.Clock();let visible=true;new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(wrap);
+const occRay=new T.Ray(),occHit=new T.Vector3();const clock=new T.Clock();let visible=true;new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(wrap);
 renderer.setAnimationLoop(()=>{const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;if(!visible)return;
  if(tween){const k=Math.min(1,(performance.now()-tween.t0)/tween.ms),e=ease(k);camera.position.lerpVectors(tween.from,tween.to,e);controls.target.lerpVectors(tween.fromT,tween.toT,e);if(k>=1){const r=tween.res;tween=null;r();}}
  controls.update();
- if(ext.visible){beacon.material.emissiveIntensity=2+Math.sin(t*2.4)*1.2;for(const f of flags){const a=f.geometry.attributes.position,b=f.userData.base;for(let i=0;i<a.count;i++){const x=b[i*3];a.array[i*3+2]=Math.sin(x*2.2+t*3)*.12*(x+1.3);}a.needsUpdate=true;}
+ if(ext.visible){occRay.origin.copy(camera.position);occRay.direction.subVectors(controls.target,camera.position);const span=occRay.direction.length();occRay.direction.normalize();for(const tw of towers){const inside=tw.box.containsPoint(camera.position),hit=occRay.intersectBox(tw.box,occHit);const want=(inside||(hit&&camera.position.distanceTo(occHit)<span-1))?.12:1;tw.o+=(want-tw.o)*Math.min(1,dt*8);for(const m of tw.mats){m.opacity=tw.o;m.depthWrite=tw.o>.95;}}
+  beacon.material.emissiveIntensity=2+Math.sin(t*2.4)*1.2;for(const f of flags){const a=f.geometry.attributes.position,b=f.userData.base;for(let i=0;i<a.count;i++){const x=b[i*3];a.array[i*3+2]=Math.sin(x*2.2+t*3)*.12*(x+1.3);}a.needsUpdate=true;}
   for(const p of peds){p.x+=p.s*dt;if(p.x>70)p.x=-70;if(p.x<-70)p.x=70;p.g.position.set(p.x,0,p.lane);p.g.rotation.y=p.s>0?Math.PI/2:-Math.PI/2;p.g.position.y=Math.abs(Math.sin(t*6+p.lane))*.05;}}
  if(int.visible){for(const o of agentObjs){if(o.mode==='desk'){const k=Math.sin(t*9+o.phase);o.armL.rotation.x=-1.1+k*.08;o.armR.rotation.x=-1.1-k*.08;o.head.rotation.y=Math.sin(t*.4+o.phase)*.25;o.head.position.y=1.88+Math.sin(t*1.3+o.phase)*.012;}
   else{const [,,total]=perimeterPoint(0,o.inset);o.t+=o.dir*o.speed*dt/total;const [x,z]=perimeterPoint(o.t,o.inset),[nx,nz]=perimeterPoint(o.t+o.dir*.004,o.inset);o.g.position.set(x,Math.abs(Math.sin(t*6.4*o.speed+o.phase))*.06,z);
