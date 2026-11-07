@@ -7,7 +7,7 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms)),dist=(a,b)=>Math.hypot(...a.map
 for(const mobile of [true,false]){const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
  await page.setViewport(mobile?{width:390,height:844,deviceScaleFactor:3,isMobile:true,hasTouch:true}:{width:1440,height:900,deviceScaleFactor:2});
  const cdp=await page.createCDPSession();const tag=mobile?'phone':'desktop';
- await page.goto(URL+'?t='+Date.now(),{waitUntil:'networkidle2',timeout:90000});await page.waitForFunction(()=>window.facelessFloor?.version==='preview-v1',{timeout:60000});await delay(2500);
+ await page.goto(URL+'?t='+Date.now(),{waitUntil:'networkidle2',timeout:90000});await page.waitForFunction(v=>window.facelessFloor?.version===v,{timeout:60000},process.env.VERSION||'preview-v1');await delay(2500);
  const get=()=>page.evaluate(()=>window.facelessFloor.cameraState());
  const box=()=>page.$eval('#scene',e=>{const b=e.getBoundingClientRect();return{x:b.x,y:b.y,w:b.width,h:b.height}});
  const P=(x,y,id)=>({x,y,id,radiusX:5,radiusY:5,force:1});

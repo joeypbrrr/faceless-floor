@@ -1,0 +1,314 @@
+{
+  "checked_at": "2026-11-07T01:25:00-05:00",
+  "note": "Public, unauthenticated sources only. No logins, no keys, no CAPTCHA/Cloudflare bypass. Blocked sources are logged, not worked around. See DISCOVERY.md for why each term/source was chosen.",
+  "youtube_channel_search": [
+    {
+      "q": "faceless shorts channel",
+      "why": "Channels that self-describe as faceless; surfaces the format directly."
+    },
+    {
+      "q": "reddit stories shorts",
+      "why": "Reddit-story narration over gameplay is the most common faceless Shorts format."
+    },
+    {
+      "q": "did you know facts shorts",
+      "why": "AI/voiceover fact channels: cheap to produce, high Shorts volume."
+    },
+    {
+      "q": "motivation shorts stock footage",
+      "why": "Stock-footage motivation: no on-camera talent."
+    },
+    {
+      "q": "oddly satisfying shorts",
+      "why": "Satisfying clips: visual-only, loop-friendly, high retention."
+    },
+    {
+      "q": "ai story shorts",
+      "why": "AI-generated narrative channels; fast-growing faceless segment."
+    },
+    {
+      "q": "scary stories shorts",
+      "why": "Horror narration: voice + visuals, strong comment engagement."
+    }
+  ],
+  "youtube_viral_shorts_search": [
+    {
+      "q": "reddit stories #shorts",
+      "niche": "Reddit-story narration"
+    },
+    {
+      "q": "aita reddit story #shorts",
+      "niche": "Reddit-story narration (AITA)"
+    },
+    {
+      "q": "fun facts #shorts",
+      "niche": "AI-voiceover facts"
+    },
+    {
+      "q": "history facts #shorts",
+      "niche": "History facts"
+    },
+    {
+      "q": "motivational quotes #shorts",
+      "niche": "Stock-footage motivation"
+    },
+    {
+      "q": "oddly satisfying #shorts",
+      "niche": "Satisfying clips"
+    },
+    {
+      "q": "amazon finds #shorts",
+      "niche": "Product / affiliate"
+    },
+    {
+      "q": "space facts #shorts",
+      "niche": "Space facts"
+    },
+    {
+      "q": "true crime story #shorts",
+      "niche": "True-crime narration"
+    },
+    {
+      "q": "ai generated story #shorts",
+      "niche": "AI-generated stories"
+    }
+  ],
+  "youtube_hashtag_pages": [
+    {
+      "tag": "memes",
+      "niche": "Meme pages"
+    },
+    {
+      "tag": "brainrot",
+      "niche": "Meme pages (brainrot)"
+    },
+    {
+      "tag": "dankmemes",
+      "niche": "Meme pages"
+    },
+    {
+      "tag": "funnyanimals",
+      "niche": "Animal clips / memes"
+    },
+    {
+      "tag": "redditstories",
+      "niche": "Reddit-story narration"
+    }
+  ],
+  "web_search": {
+    "engine": "DuckDuckGo Lite (public HTML) first, Bing fallback",
+    "tiktok_queries": [
+      "site:tiktok.com faceless reddit stories",
+      "site:tiktok.com fun facts voiceover account",
+      "site:tiktok.com satisfying videos account",
+      "site:tiktok.com motivation quotes page"
+    ],
+    "instagram_queries": [
+      "site:instagram.com faceless motivation page",
+      "site:instagram.com meme page reels",
+      "site:instagram.com facts page reels"
+    ],
+    "roundup_queries": [
+      "best faceless youtube channels examples 2026",
+      "faceless youtube shorts channels making money examples"
+    ]
+  },
+  "reddit": {
+    "access": "Public RSS (reddit.com/r/<sub>/search.rss). The public .json endpoints return 403 from this machine and are logged as blocked.",
+    "subs": [
+      "NewTubers",
+      "youtubers",
+      "PartneredYoutube",
+      "Tiktokhelp",
+      "InstagramMarketing"
+    ],
+    "search_terms": [
+      "faceless",
+      "faceless niche",
+      "shorts monetization"
+    ],
+    "per_cycle": 2
+  },
+  "directories": [
+    {
+      "name": "Social Blade — YouTube channel pages",
+      "url": "https://socialblade.com/youtube/handle/updooteverything",
+      "use": "14-day daily views/subscriber deltas for the real-vs-fake check",
+      "marker": "Daily Channel Metrics"
+    },
+    {
+      "name": "Social Blade — TikTok user pages",
+      "url": "https://socialblade.com/tiktok/user/zachking",
+      "use": "TikTok followers / likes / video counts",
+      "marker": "followers"
+    },
+    {
+      "name": "Social Blade — Instagram user pages",
+      "url": "https://socialblade.com/instagram/user/natgeo",
+      "use": "Instagram follower stats",
+      "marker": "followers"
+    },
+    {
+      "name": "Social Blade — Top 100 YouTube list",
+      "url": "https://socialblade.com/youtube/lists/top/100/subscribers/all/global",
+      "use": "Reachable, but mega-channels only (low relevance to low-competition faceless pages)",
+      "marker": "YouTube Creators"
+    },
+    {
+      "name": "YouTube hashtag pages",
+      "url": "https://www.youtube.com/hashtag/redditstories",
+      "use": "Public viral Shorts per hashtag",
+      "marker": "videoRenderer"
+    },
+    {
+      "name": "YouTube search (channels / videos)",
+      "url": "https://www.youtube.com/results?search_query=reddit+stories+%23shorts",
+      "use": "Public search results with view counts",
+      "marker": "shortsLockupViewModel"
+    },
+    {
+      "name": "YouTube Trending",
+      "url": "https://www.youtube.com/feed/trending",
+      "use": "Trending list",
+      "marker": "videoRenderer"
+    },
+    {
+      "name": "YouTube channel RSS",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCX6OQ3DkcsbYNE6H8uQQuVA",
+      "use": "Per-channel recent uploads",
+      "marker": "<entry>"
+    },
+    {
+      "name": "TikTok public profile pages",
+      "url": "https://www.tiktok.com/@zachking",
+      "use": "Followers / hearts / video count",
+      "marker": "\"followerCount\""
+    },
+    {
+      "name": "TikTok tag pages",
+      "url": "https://www.tiktok.com/tag/redditstories",
+      "use": "Viral videos per hashtag",
+      "marker": "\"uniqueId\""
+    },
+    {
+      "name": "TikTok discover pages",
+      "url": "https://www.tiktok.com/discover/faceless-reddit-stories",
+      "use": "Topic roundups",
+      "marker": "\"uniqueId\""
+    },
+    {
+      "name": "TikTok Creative Center (trending hashtags)",
+      "url": "https://ads.tiktok.com/business/creativecenter/inspiration/popular/hashtag/pc/en",
+      "use": "Trending hashtags",
+      "marker": "hashtag_name"
+    },
+    {
+      "name": "Instagram public profile pages",
+      "url": "https://www.instagram.com/natgeo/",
+      "use": "Follower counts",
+      "marker": "edge_followed_by"
+    },
+    {
+      "name": "Instagram hashtag pages",
+      "url": "https://www.instagram.com/explore/tags/memes/",
+      "use": "Viral reels per tag",
+      "marker": "edge_hashtag"
+    },
+    {
+      "name": "Reddit public JSON",
+      "url": "https://www.reddit.com/r/NewTubers/top.json?t=month",
+      "use": "Niche discussions",
+      "marker": "\"kind\": \"Listing\""
+    },
+    {
+      "name": "Reddit public RSS search",
+      "url": "https://www.reddit.com/r/NewTubers/search.rss?q=faceless&restrict_sr=1&sort=top&t=month",
+      "use": "Niche discussions",
+      "marker": "<entry>"
+    },
+    {
+      "name": "Playboard Shorts charts",
+      "url": "https://playboard.co/en/chart/short/most-viewed-all-videos-in-worldwide-daily",
+      "use": "Daily most-viewed Shorts",
+      "marker": "/video/"
+    },
+    {
+      "name": "NoxInfluencer YouTube rankings",
+      "url": "https://www.noxinfluencer.com/youtube-channel-rank/top-100-all-all-youtuber-sorted-by-subs-weekly",
+      "use": "Channel rankings",
+      "marker": "/youtube/channel/"
+    },
+    {
+      "name": "Bing web search",
+      "url": "https://www.bing.com/search?q=faceless+youtube+channel",
+      "use": "Fallback web search (from this machine its results ignore the site: operator)",
+      "marker": "<cite>"
+    },
+    {
+      "name": "DuckDuckGo HTML search",
+      "url": "https://html.duckduckgo.com/html/?q=faceless+youtube+channel",
+      "use": "Backup web search",
+      "marker": "result__a"
+    },
+    {
+      "name": "DuckDuckGo Lite search",
+      "url": "https://lite.duckduckgo.com/lite/?q=site%3Atiktok.com+faceless+reddit+stories",
+      "use": "Primary web search (honours site: operator)",
+      "marker": "result-link"
+    },
+    {
+      "name": "Google Search",
+      "url": "https://www.google.com/search?q=site%3Atiktok.com+faceless+reddit+stories",
+      "use": "Web search",
+      "marker": "/url?q="
+    },
+    {
+      "name": "Mojeek search",
+      "url": "https://www.mojeek.com/search?q=faceless+youtube+channel",
+      "use": "Backup web search",
+      "marker": "results-standard"
+    }
+  ],
+  "seeds": [
+    {
+      "platform": "YouTube",
+      "handle": "@BoltMotivationYT",
+      "url": "https://www.youtube.com/@BoltMotivationYT",
+      "niche": "Stock-footage motivation",
+      "verified_at": "2026-11-07T01:34:00-05:00",
+      "reason": "Qualified in the 1:34 AM cycle: 3.09M subscribers, median 236,668 views on 4 shorts all posted Nov 6, 2.7% like rate; clip-compilation motivation edits with caption overlays, owner never on camera."
+    },
+    {
+      "platform": "YouTube",
+      "handle": "@OddlySatisfying",
+      "url": "https://www.youtube.com/@OddlySatisfying",
+      "niche": "Satisfying clips",
+      "verified_at": "2026-11-07T01:34:00-05:00",
+      "reason": "4.36M subscribers, no faces in 12 sampled frames, posting daily (latest Nov 6), but median only 9,248 views on recent shorts — benchmark for how saturated the satisfying niche is."
+    },
+    {
+      "platform": "YouTube",
+      "handle": "@ConsumerBuff",
+      "url": "https://www.youtube.com/@ConsumerBuff",
+      "niche": "Product / affiliate",
+      "verified_at": "2026-11-07T01:34:00-05:00",
+      "reason": "Faceless product shorts (no faces in 12 frames) with a median 1,528,604 views on its latest shorts, yet no upload since May 2024 — proof the product-demo format pulls views with an inactive competitor."
+    },
+    {
+      "platform": "YouTube",
+      "handle": "@RedditGigglez",
+      "url": "https://www.youtube.com/@RedditGigglez",
+      "niche": "Reddit-story narration",
+      "verified_at": "2026-11-07T01:42:00-05:00",
+      "reason": "Small (23.6K subscribers) Reddit-story channel, no faces in sampled frames, posting daily (latest Nov 6), median 16,378 views — low-competition example to watch for breakout."
+    },
+    {
+      "platform": "TikTok",
+      "handle": "@faceless.inc.proj",
+      "url": "https://www.tiktok.com/@faceless.inc.proj",
+      "niche": "Reddit-story narration",
+      "verified_at": "2026-11-07T01:42:00-05:00",
+      "reason": "Public profile read Nov 7: 184,000 followers, 2.2M likes, 571 videos; found via web search for faceless Reddit-story TikToks. Per-video views are not publicly readable."
+    }
+  ]
+}

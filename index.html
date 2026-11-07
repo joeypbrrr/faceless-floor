@@ -1,1 +1,29 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Faceless Floor — Preview</title><meta http-equiv="refresh" content="0; url=./preview/"><link rel="canonical" href="./preview/"></head><body style="font-family:system-ui;background:#0b0f1d;color:#f3ede2;padding:24px">PREVIEW with sample data only. <a style="color:#e8c27a" href="./preview/">Open the Faceless Floor preview →</a></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b0f1d">
+<title>Faceless Floor — Live research</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Cpath d=%22M8 1l7 7-7 7-7-7z%22 fill=%22%23e8c27a%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app/live.css?v=live-v1"></head><body data-view="exterior">
+<div class="livebar" role="status"><span><i class="dot"></i>Live research · updated <b id="updated">…</b> · next cycle <span id="next">…</span></span><a href="preview/">View the sample preview →</a></div>
+<header class="top"><a class="brand" href="./"><span class="mark">◆</span> Faceless <em>Floor</em></a><nav><a href="#top10">Top 10</a><a href="#agents">Agents</a><a href="#feed">Feed</a><a href="#discovery">Discovery</a><a href="#sources">Sources</a></nav></header>
+<main>
+<section class="hero"><div class="scene-wrap"><canvas id="scene" aria-label="3D Wall Street exchange building with fifty research agents"></canvas><div id="scene-fade"></div>
+ <div class="scene-title"><span class="eyebrow">The Exchange · Live research</span><h1>Fifty agents hunting the <em>faceless</em> internet.</h1></div>
+ <div class="scene-controls" role="group" aria-label="Scene view"><button data-view="exterior" class="active" aria-pressed="true">Exterior</button><button data-view="interior" aria-pressed="false">Enter floor</button><button id="reset-view" aria-label="Reset view">↺</button></div>
+ <div id="scene-hint" class="scene-hint">Drag to orbit · pinch / scroll to zoom · two-finger / right-drag to pan · tap the building to enter</div>
+ <div id="agent-card" class="agent-card glass" hidden></div><div id="scene-fallback" hidden>3D isn’t available in this browser. Everything is listed below.</div></div></section>
+<section class="stats" id="stats"></section>
+<section id="top10" class="block"><div class="head"><div><span class="eyebrow">Shortlist · verified only</span><h2>Top 10 faceless pages</h2></div><p>Every number links to its public source and read time. Unknown stays unknown.</p></div><div id="top-note"></div><div id="pages" class="pages"></div>
+ <div class="head" style="margin-top:36px"><div><span class="eyebrow">Near misses</span><h2 style="font-size:28px">Candidates still being checked</h2></div></div><div id="near" class="near"></div></section>
+<section id="agents" class="block"><div class="head"><div><span class="eyebrow">The floor</span><h2>Fifty agents, eight desks of work</h2></div><p>Each agent’s real latest action and finding from the last cycle. Tap one to see it on the floor.</p></div><div id="teams" class="teams"></div></section>
+<section id="feed" class="block"><div class="head"><div><span class="eyebrow">Findings board</span><h2>Live feed</h2></div><p>Newest first, from the latest hourly cycle.</p></div><ol id="feedlist" class="feedlist glass"></ol></section>
+<section id="discovery" class="block"><div class="head"><div><span class="eyebrow">Discovery config</span><h2>Active queries & seeds</h2></div><p>From <code>config/discovery.json</code>; reasons in <a style="color:var(--gold)" href="https://github.com/joeypbrrr/faceless-floor/blob/main/DISCOVERY.md" target="_blank" rel="noopener">DISCOVERY.md</a>.</p></div><div id="disc" class="disc"></div></section>
+<section id="sources" class="block"><div class="head"><div><span class="eyebrow">Public sources only</span><h2>Source health</h2></div><p>No logins, accounts, keys or bot-check bypass. Blocked sources are logged and skipped.</p></div>
+ <div class="disc"><div class="glass"><h3>Directories & platforms</h3><ul class="srcs" id="dirs"></ul></div><div class="glass"><h3>This cycle’s requests</h3><ul class="srcs" id="srclog"></ul></div></div></section>
+<section class="block roadmap"><div class="head"><div><span class="eyebrow">Later phases · not started</span><h2>From research to a monetized page</h2></div></div>
+ <ol class="steps"><li class="glass"><b>01</b><span>Research real viral faceless pages from public sources and verify engagement. <em>(running)</em></span></li><li class="glass"><b>02</b><span>Replicate the <em>format</em> with Joey — original content only, never reposts.</span></li><li class="glass"><b>03</b><span>Cross-post video pages to TikTok, Instagram and YouTube.</span></li><li class="glass"><b>04</b><span>Scale toward 100K followers and monetize one page.</span></li></ol></section>
+</main>
+<footer><span>Faceless Floor · live research</span><span>Research only · no accounts · no posting · <a href="preview/" style="color:var(--gold)">sample preview</a></span></footer>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="app/app.js?v=live-v1"></script><script type="module" src="app/scene.js?v=live-v1"></script>
+</body></html>

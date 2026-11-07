@@ -1,0 +1,7 @@
+{
+  "note": "Manual faceless reviews: a person looked at the public frame thumbnails (hq1–hq3) of the channel's latest shorts. Overrides the automated face check. Each entry is dated; re-review if the channel's format changes.",
+  "reviews": {
+    "@justicebuys1": {"faceless": "no", "reviewed_at": "2026-11-07T01:38:00-05:00", "evidence": "A presenter (man in a blue shirt) appears on camera, face visible, in product demos among the latest shorts (e.g. youtube.com/shorts/zeVyI2bB_qQ)."},
+    "@BoltMotivationYT": {"faceless": "yes", "reviewed_at": "2026-11-07T01:38:00-05:00", "evidence": "Edited compilations of third-party clips (boxers, athletes, viral moments) with bold caption overlays; the channel owner never appears. Note: built on other people's footage — replicate the edit style with licensed/original footage only."}
+  }
+}

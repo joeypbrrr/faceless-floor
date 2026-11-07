@@ -1,2 +1,5 @@
 .run/
 node_modules/
+research/models/
+__pycache__/
+*.tmp
