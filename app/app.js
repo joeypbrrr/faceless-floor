@@ -1,4 +1,4 @@
-import { LIVE, agents } from './data.js?v=live-v1';
+import { LIVE, agents } from './data.js?v=live-v2';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=n=>n==null?'unknown':Number(n).toLocaleString('en-US'),pct=x=>x==null?'unknown':(x*100).toFixed(1)+'%';
 const et=iso=>iso?new Date(iso).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' ET':'unknown';

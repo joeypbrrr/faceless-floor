@@ -3,15 +3,27 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Cpath d=%22M8 1l7 7-7 7-7-7z%22 fill=%22%23e8c27a%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="app/live.css?v=live-v1"></head><body data-view="exterior">
+<link rel="stylesheet" href="app/live.css?v=live-v2"></head><body data-view="exterior">
 <div class="livebar" role="status"><span><i class="dot"></i>Live research · updated <b id="updated">…</b> · next cycle <span id="next">…</span></span><a href="preview/">View the sample preview →</a></div>
 <header class="top"><a class="brand" href="./"><span class="mark">◆</span> Faceless <em>Floor</em></a><nav><a href="#top10">Top 10</a><a href="#agents">Agents</a><a href="#feed">Feed</a><a href="#discovery">Discovery</a><a href="#sources">Sources</a></nav></header>
 <main>
-<section class="hero"><div class="scene-wrap"><canvas id="scene" aria-label="3D Wall Street exchange building with fifty research agents"></canvas><div id="scene-fade"></div>
+<section class="hero"><div class="scene-wrap" id="scene-wrap"><picture id="scene-still" aria-hidden="true"><source media="(max-width:720px)" srcset="app/img/exterior-tall.webp" type="image/webp"><source srcset="app/img/exterior-wide.webp" type="image/webp"><source media="(max-width:720px)" srcset="app/img/exterior-tall.jpg"><img src="app/img/exterior-wide.jpg" alt="" decoding="async" fetchpriority="high"></picture><canvas id="scene" aria-label="3D Wall Street exchange building with fifty research agents"></canvas><div id="scene-fade"></div>
  <div class="scene-title"><span class="eyebrow">The Exchange · Live research</span><h1>Fifty agents hunting the <em>faceless</em> internet.</h1></div>
  <div class="scene-controls" role="group" aria-label="Scene view"><button data-view="exterior" class="active" aria-pressed="true">Exterior</button><button data-view="interior" aria-pressed="false">Enter floor</button><button id="reset-view" aria-label="Reset view">↺</button></div>
  <div id="scene-hint" class="scene-hint">Drag to orbit · pinch / scroll to zoom · two-finger / right-drag to pan · tap the building to enter</div>
- <div id="agent-card" class="agent-card glass" hidden></div><div id="scene-fallback" hidden>3D isn’t available in this browser. Everything is listed below.</div></div></section>
+ <div id="agent-card" class="agent-card glass" hidden></div><div id="scene-fallback" hidden>The Exchange</div></div></section>
+<script>/* 3D watchdog (plain script, runs even if modules/importmap fail): the static exterior image stays up until the 3D scene has drawn 10+ verified frames; otherwise the canvas is hidden and the image stays. */
+(function(){var w=document.getElementById('scene-wrap');if(!w)return;var done=false,frames=0,started=0,t0=Date.now();
+function is3d(){return w.className.indexOf('is-3d')>-1}
+function fail(why){if(done)return;done=true;w.className=w.className.replace(/\s*is-3d/g,'')+' no3d';var f=document.getElementById('scene-fallback');if(f)f.hidden=false;window.__ffNo3d=why||'fallback';var ev;try{ev=new Event('ff-no3d')}catch(e){ev=document.createEvent('Event');ev.initEvent('ff-no3d',false,false)}window.dispatchEvent(ev);}
+window.__ff={fail:fail,dead:function(){return done},start:function(){started=Date.now()},frame:function(){if(done)return false;frames++;return true},confirm:function(){if(!done&&!is3d())w.className+=' is-3d'},frames:function(){return frames},forced:/[?&]no3d=1/.test(location.search)};
+if(window.__ff.forced){fail('forced');return;}
+if(!window.WebGLRenderingContext){fail('no-webgl');return;}
+window.addEventListener('error',function(e){var t=e&&e.target,f=(e&&e.filename)||'';if(t&&t.tagName==='SCRIPT'){if(/scene\.js|three|es-module-shims/.test(t.src||''))fail('script-load');}else if(/scene\.js|three/.test(f)&&!is3d())fail('scene-error');},true);
+function check(){if(done||is3d())return;var r=w.getBoundingClientRect(),now=Date.now();if(document.hidden||r.bottom<0||r.top>innerHeight){setTimeout(check,1000);return;}
+ if(now-t0>=12000||(started&&now-started>=5000)){fail(started?'no-frames':'not-started');return;}setTimeout(check,500);}
+setTimeout(check,5000);})();
+</script>
 <section class="stats" id="stats"></section>
 <section id="top10" class="block"><div class="head"><div><span class="eyebrow">Shortlist · verified only</span><h2>Top 10 faceless pages</h2></div><p>Every number links to its public source and read time. Unknown stays unknown.</p></div><div id="top-note"></div><div id="pages" class="pages"></div>
  <div class="head" style="margin-top:36px"><div><span class="eyebrow">Near misses</span><h2 style="font-size:28px">Candidates still being checked</h2></div></div><div id="near" class="near"></div></section>
@@ -24,6 +36,7 @@
  <ol class="steps"><li class="glass"><b>01</b><span>Research real viral faceless pages from public sources and verify engagement. <em>(running)</em></span></li><li class="glass"><b>02</b><span>Replicate the <em>format</em> with Joey — original content only, never reposts.</span></li><li class="glass"><b>03</b><span>Cross-post video pages to TikTok, Instagram and YouTube.</span></li><li class="glass"><b>04</b><span>Scale toward 100K followers and monetize one page.</span></li></ol></section>
 </main>
 <footer><span>Faceless Floor · live research</span><span>Research only · no accounts · no posting · <a href="preview/" style="color:var(--gold)">sample preview</a></span></footer>
+<script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1.10.0/dist/es-module-shims.js" crossorigin="anonymous"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
-<script type="module" src="app/app.js?v=live-v1"></script><script type="module" src="app/scene.js?v=live-v1"></script>
+<script type="module" src="app/app.js?v=live-v2"></script><script type="module">if(!(window.__ff&&window.__ff.dead()))import("./app/scene.js?v=live-v2").catch(function(e){console.warn("3D scene unavailable, showing still image:",e&&e.message);window.__ff&&window.__ff.fail("import");});</script>
 </body></html>

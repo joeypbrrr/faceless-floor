@@ -1,14 +1,19 @@
 // Faceless Floor — LIVE scene, driven by data/live.json (real research snapshot).
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { agents, top10, feed, META } from './data.js?v=live-v1';
+import { agents, top10, feed, META } from './data.js?v=live-v2';
 const T=THREE, canvas=document.querySelector('#scene'), wrap=canvas.parentElement;
 const coarse=matchMedia('(pointer: coarse)').matches, small=innerWidth<720, reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// phones (touch or narrow): lighter renderer + scene. Same design, fewer pixels/polys, no shadows.
+const phone=coarse||innerWidth<700, LO=phone?{seg:.5,aniso:1,cell:8}:{seg:1,aniso:4,cell:16};
+const seg=n=>Math.max(3,Math.round(n*LO.seg));
+const FF=window.__ff||{fail(){},dead:()=>false,start(){},frame:()=>true,confirm(){},forced:false};
+FF.start();
 let renderer;
-try{renderer=new T.WebGLRenderer({canvas,antialias:!small,powerPreference:'high-performance'});}catch(e){document.querySelector('#scene-fallback').hidden=false;throw e;}
-renderer.setPixelRatio(Math.min(devicePixelRatio,small?1.5:2));
+try{renderer=new T.WebGLRenderer({canvas,antialias:!phone,powerPreference:phone?'default':'high-performance'});}catch(e){FF.fail('renderer');throw e;}
+renderer.setPixelRatio(Math.min(devicePixelRatio,phone?1.25:2));
 renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
-renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
+renderer.shadowMap.enabled=!phone;renderer.shadowMap.type=T.PCFSoftShadowMap;
 const scene=new T.Scene();
 const camera=new T.PerspectiveCamera(42,1,.1,600);
 const controls=new OrbitControls(camera,canvas);
@@ -29,20 +34,20 @@ controls.addEventListener('change',()=>{if(tween)return;const b=POSES[view].boun
 // ---------- helpers ----------
 const std=(c,r=.7,m=0,extra={})=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,...extra});
 function add(parent,geo,mat,x=0,y=0,z=0,{cast=true,receive=true}={}){const o=new T.Mesh(geo,mat);o.position.set(x,y,z);o.castShadow=cast;o.receiveShadow=receive;parent.add(o);return o;}
-function canvasTex(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');draw(g,w,h);const t=new T.CanvasTexture(c);t.colorSpace=T.SRGBColorSpace;t.anisotropy=4;t.userData={c,g};return t;}
+function canvasTex(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');draw(g,w,h);const t=new T.CanvasTexture(c);t.colorSpace=T.SRGBColorSpace;t.anisotropy=LO.aniso;t.userData={c,g};return t;}
 const rand=(s=>()=>(s=(s*16807)%2147483647)/2147483647)(42);
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 
 // ---------- sky + lights ----------
-const sky=new T.Mesh(new T.SphereGeometry(400,32,16),new T.ShaderMaterial({side:T.BackSide,depthWrite:false,uniforms:{top:{value:new T.Color(0x0a1026)},mid:{value:new T.Color(0x3a2f5c)},bottom:{value:new T.Color(0xe39a6b)}},
+const sky=new T.Mesh(new T.SphereGeometry(400,seg(32),seg(16)),new T.ShaderMaterial({side:T.BackSide,depthWrite:false,uniforms:{top:{value:new T.Color(0x0a1026)},mid:{value:new T.Color(0x3a2f5c)},bottom:{value:new T.Color(0xe39a6b)}},
  vertexShader:'varying vec3 vp;void main(){vp=normalize(position);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
  fragmentShader:'uniform vec3 top,mid,bottom;varying vec3 vp;void main(){float h=vp.y;vec3 c=h>0.08?mix(mid,top,smoothstep(.08,.6,h)):mix(bottom,mid,smoothstep(-.05,.08,h));gl_FragColor=vec4(c,1.);}'}));
 scene.add(sky);
-const starGeo=new T.BufferGeometry(),sp=[];for(let i=0;i<700;i++){const th=rand()*Math.PI*2,ph=Math.acos(.15+rand()*.85);sp.push(380*Math.sin(ph)*Math.cos(th),380*Math.cos(ph),380*Math.sin(ph)*Math.sin(th));}
+const starGeo=new T.BufferGeometry(),sp=[];for(let i=0;i<(phone?350:700);i++){const th=rand()*Math.PI*2,ph=Math.acos(.15+rand()*.85);sp.push(380*Math.sin(ph)*Math.cos(th),380*Math.cos(ph),380*Math.sin(ph)*Math.sin(th));}
 starGeo.setAttribute('position',new T.Float32BufferAttribute(sp,3));scene.add(new T.Points(starGeo,new T.PointsMaterial({color:0xfff4e0,size:1.4,sizeAttenuation:false,transparent:true,opacity:.75})));
 scene.fog=new T.Fog(0x2b2547,70,260);
 const hemi=new T.HemisphereLight(0x8fa0d8,0x2a1d18,.9);scene.add(hemi);
-const sun=new T.DirectionalLight(0xffc49a,1.6);sun.position.set(-40,45,35);sun.castShadow=true;
+const sun=new T.DirectionalLight(0xffc49a,1.6);sun.position.set(-40,45,35);sun.castShadow=!phone;
 sun.shadow.mapSize.set(small?1024:2048,small?1024:2048);Object.assign(sun.shadow.camera,{left:-45,right:45,top:45,bottom:-45,near:5,far:160});sun.shadow.bias=-.0004;sun.shadow.normalBias=.03;scene.add(sun);
 
 // ---------- EXTERIOR ----------
@@ -56,7 +61,7 @@ add(ext,new T.BoxGeometry(220,.35,1.2),std(0x77716a),0,0,26,{cast:false});add(ex
 const ivory=std(0xe7dfcf,.62),ivoryDark=std(0xcfc5b2,.7),bronze=std(0x9a7a4a,.35,.8),glassWarm=std(0x2a1a0e,.15,.2,{emissive:0xffb35c,emissiveIntensity:1.25});
 for(let i=0;i<6;i++)add(ext,new T.BoxGeometry(30-i*.6,.38,3.4-i*.0),ivoryDark,0,.19+i*.38,14.2-i*.55);
 add(ext,new T.BoxGeometry(28,.6,18),ivory,0,2.3,4.2);
-const colGeo=new T.LatheGeometry([[0,0],[1.05,0],[1.05,.25],[.9,.4],[.8,.55],[.74,1],[.68,10.4],[.8,10.6],[1.0,10.85],[1.1,11.1],[0,11.1]].map(p=>new T.Vector2(p[0],p[1])),28);
+const colGeo=new T.LatheGeometry([[0,0],[1.05,0],[1.05,.25],[.9,.4],[.8,.55],[.74,1],[.68,10.4],[.8,10.6],[1.0,10.85],[1.1,11.1],[0,11.1]].map(p=>new T.Vector2(p[0],p[1])),seg(28));
 const COLS=8,colZ=11.4;for(let i=0;i<COLS;i++){const x=-11.9+i*3.4;add(ext,colGeo,ivory,x,2.6,colZ);}
 add(ext,new T.BoxGeometry(28.6,.9,4),ivory,0,14.15,colZ);
 const friezeTex=canvasTex(2048,128,(g,w,h)=>{g.fillStyle='#ded5c3';g.fillRect(0,0,w,h);g.fillStyle='#4b3f2e';g.font='600 64px "Instrument Serif", Georgia, serif';g.textAlign='center';g.textBaseline='middle';g.letterSpacing='18px';g.fillText('FACELESS  FLOOR  EXCHANGE  ·  LIVE',w/2,h/2+4);});
@@ -71,24 +76,24 @@ for(let r=0;r<3;r++)for(let i=0;i<7;i++){const x=-10.2+i*3.4;if(r===0&&i===3)con
 const door=add(ext,new T.BoxGeometry(3,5.2,.15),std(0x3a2410,.25,.3,{emissive:0xffa64a,emissiveIntensity:1.6}),0,5.2,9.06,{cast:false});door.name='door';
 add(ext,new T.BoxGeometry(3.8,.3,.5),bronze,0,7.9,9.1);
 // tower with lit windows
-function windowTex(cols,rows,warm,seed){return canvasTex(cols*16,rows*16,(g,w,h)=>{g.fillStyle='#1a1d27';g.fillRect(0,0,w,h);for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const on=rand()<(warm?.55:.4);g.fillStyle=on?(warm?(rand()<.5?'#ffcf8a':'#ffe2b3'):(rand()<.5?'#bcd6ff':'#ffe6c0')):'#232838';g.fillRect(x*16+3,y*16+3,10,10);}});}
+function windowTex(cols,rows,warm,seed){const C=LO.cell,k=C/16;return canvasTex(cols*C,rows*C,(g,w,h)=>{g.fillStyle='#1a1d27';g.fillRect(0,0,w,h);for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const on=rand()<(warm?.55:.4);g.fillStyle=on?(warm?(rand()<.5?'#ffcf8a':'#ffe2b3'):(rand()<.5?'#bcd6ff':'#ffe6c0')):'#232838';g.fillRect(x*C+3*k,y*C+3*k,10*k,10*k);}});}
 const towers=[];// towers fade when they sit between the camera and its target, so no orbit angle is blocked
 function tower(x,z,w,h,d,warm,color,extra=0){const tex=windowTex(Math.round(w*1.6),Math.round(h*1.2),warm);const m=std(color,.4,.35,{map:tex,emissive:0xffffff,emissiveMap:tex,emissiveIntensity:.85,transparent:true});add(ext,new T.BoxGeometry(w,h,d),m,x,h/2,z);towers.push({box:new T.Box3(new T.Vector3(x-w/2,0,z-d/2),new T.Vector3(x+w/2,h+extra,z+d/2)),mats:[m],o:1});return m;}
 // HQ tower stands on its own lot behind the exchange: exchange back wall is z=-6, tower front is z=-16 (10-unit alley).
 const TZ=-22;tower(0,TZ,18,38,12,true,0xb9ac96,12);{const cr=[ivory.clone(),ivory.clone(),bronze.clone()];cr.forEach(m=>m.transparent=true);add(ext,new T.BoxGeometry(19,1.2,13),cr[0],0,38.6,TZ);add(ext,new T.BoxGeometry(12,4,8),cr[1],0,41,TZ);
 add(ext,new T.ConeGeometry(4.6,6,4),cr[2],0,46,TZ).rotation.y=Math.PI/4;towers[towers.length-1].mats.push(...cr);}
-const beacon=add(ext,new T.SphereGeometry(.45,16,12),std(0xff5a3a,.3,0,{emissive:0xff4a2a,emissiveIntensity:3}),0,49.4,TZ,{cast:false});
+const beacon=add(ext,new T.SphereGeometry(.45,seg(16),seg(12)),std(0xff5a3a,.3,0,{emissive:0xff4a2a,emissiveIntensity:3}),0,49.4,TZ,{cast:false});
 add(ext,new T.BoxGeometry(46,.04,8),std(0x1c1d24,.55,.1),0,.02,-11,{cast:false});
-for(const [x,z,w,h,d] of [[-34,-6,12,30,12],[35,-8,13,44,13],[-50,-24,14,56,14],[52,-28,14,34,14],[-24,-38,12,48,12],[25,-40,12,60,12]])tower(x,z,w,h,d,false,0x7f8aa3);
+for(const [x,z,w,h,d] of [[-34,-6,12,30,12],[35,-8,13,44,13],[-50,-24,14,56,14],[52,-28,14,34,14],[-24,-38,12,48,12],[25,-40,12,60,12]].slice(0,phone?4:6))tower(x,z,w,h,d,false,0x7f8aa3);
 // lamps, planters, flags
 const lampMat=std(0x1f1d1b,.4,.8),bulb=std(0xfff1d6,.2,0,{emissive:0xffcf8f,emissiveIntensity:2.6});
-for(let x=-24;x<=24;x+=8){if(Math.abs(x)<4)continue;add(ext,new T.CylinderGeometry(.12,.18,5.2,10),lampMat,x,2.6,22);add(ext,new T.SphereGeometry(.42,16,12),bulb,x,5.4,22,{cast:false});}
+for(let x=-24;x<=24;x+=8){if(Math.abs(x)<4)continue;add(ext,new T.CylinderGeometry(.12,.18,5.2,seg(10)),lampMat,x,2.6,22);add(ext,new T.SphereGeometry(.42,seg(16),seg(12)),bulb,x,5.4,22,{cast:false});}
 const warmL=new T.PointLight(0xffb36b,60,34,1.6);warmL.position.set(0,6,18);ext.add(warmL);
 const planter=std(0x6c655b,.8),leaf=std(0x2f4a35,.9);
 for(const x of [-17,-13,13,17]){add(ext,new T.BoxGeometry(2.2,1,2.2),planter,x,.5,17);add(ext,new T.IcosahedronGeometry(1.25,1),leaf,x,1.9,17);}
 const flags=[];for(const x of [-15.5,15.5]){add(ext,new T.CylinderGeometry(.08,.08,10,8),bronze,x,5,20);const f=add(ext,new T.PlaneGeometry(2.6,1.5,10,4),std(x<0?0x1d2c55:0x7a1f2a,.8,0,{side:T.DoubleSide}),x+1.3,9.1,20);f.userData.base=f.geometry.attributes.position.array.slice();flags.push(f);}
 // street pedestrians (exterior ambience)
-const peds=[];const pedMat=[std(0x2b2f3a),std(0x5a4636),std(0x3b4a5c)];for(let i=0;i<10;i++){const g=new T.Group();add(g,new T.CapsuleGeometry(.28,.8,4,8),pedMat[i%3],0,.95,0);add(g,new T.SphereGeometry(.22,12,10),std(0xd7cfc2,.6),0,1.75,0);ext.add(g);peds.push({g,lane:i%2?23.5:44.5,x:-60+rand()*120,s:(i%2?1:-1)*(1.1+rand()*.6)});}
+const peds=[];const pedMat=[std(0x2b2f3a),std(0x5a4636),std(0x3b4a5c)];for(let i=0;i<10;i++){const g=new T.Group();add(g,new T.CapsuleGeometry(.28,.8,phone?2:4,seg(8)),pedMat[i%3],0,.95,0);add(g,new T.SphereGeometry(.22,seg(12),seg(10)),std(0xd7cfc2,.6),0,1.75,0);ext.add(g);peds.push({g,lane:i%2?23.5:44.5,x:-60+rand()*120,s:(i%2?1:-1)*(1.1+rand()*.6)});}
 
 // ---------- INTERIOR ----------
 const int=new T.Group();scene.add(int);
@@ -100,7 +105,7 @@ const wallM=std(0xd9cfbe,.85);
 add(int,new T.BoxGeometry(44,11,.6),wallM,0,5.5,-16);add(int,new T.BoxGeometry(.6,11,32),wallM,-22,5.5,0);add(int,new T.BoxGeometry(.6,11,32),wallM,22,5.5,0);
 add(int,new T.BoxGeometry(44,.6,.9),std(0xb59b6d,.4,.6),0,11,-16);
 for(const z of [-10,-2,6,12]){for(const x of [-21.6,21.6]){add(int,new T.BoxGeometry(.2,6.6,3.2),std(0x101627,.15,.3,{emissive:0x33406e,emissiveIntensity:.9}),x,5,z,{cast:false});}}
-const pil=new T.CylinderGeometry(.55,.6,11,20);for(const x of [-16,16])for(const z of [-12,-4,4,12])add(int,pil,wallM,x,5.5,z);
+const pil=new T.CylinderGeometry(.55,.6,11,seg(20));for(const x of [-16,16])for(const z of [-12,-4,4,12])add(int,pil,wallM,x,5.5,z);
 // boards
 const feedTex=canvasTex(1024,512,()=>{}),topTex=canvasTex(1024,640,()=>{});
 function drawFeed(off=0){const {g}=feedTex.userData,w=1024,h=512;g.fillStyle='#0d1220';g.fillRect(0,0,w,h);g.fillStyle='#e8c27a';g.font='600 34px Inter, Arial';g.fillText('LIVE FEED',40,58);g.fillStyle='#ff8f6b';g.font='700 22px Inter, Arial';g.fillText(('LIVE · UPDATED '+META.updated_label).toUpperCase(),300,56);g.font='22px Inter, Arial';for(let i=0;i<9;i++){const f=feed[(i+off)%feed.length];g.fillStyle=i%2?'#c9d1e8':'#f1ead9';g.fillText(`${f.t}  ${f.who.split(' · ')[0]} — ${f.msg}`.slice(0,84),40,110+i*44);}feedTex.needsUpdate=true;}
@@ -112,7 +117,7 @@ const clockTex=canvasTex(512,256,(g,w,h)=>{g.fillStyle='#0d1220';g.fillRect(0,0,
 add(int,new T.BoxGeometry(8.6,4.6,.3),frame,10,6.6,-15.5);add(int,new T.PlaneGeometry(8,4),new T.MeshBasicMaterial({map:clockTex,toneMapped:false}),10,6.6,-15.33,{cast:false,receive:false});
 // chandeliers + warm lights
 const chand=std(0xfff0d0,.2,0,{emissive:0xffc77a,emissiveIntensity:2.2});const iLights=[];
-for(const x of [-9,9]){add(int,new T.CylinderGeometry(.03,.03,3,6),bronze,x,9.5,0,{cast:false});add(int,new T.TorusGeometry(1.1,.08,8,32),bronze,x,8,0,{cast:false}).rotation.x=Math.PI/2;add(int,new T.SphereGeometry(.55,20,14),chand,x,7.9,0,{cast:false});const l=new T.PointLight(0xffb870,small?70:90,30,1.5);l.position.set(x,7.5,0);int.add(l);iLights.push(l);}
+for(const x of [-9,9]){add(int,new T.CylinderGeometry(.03,.03,3,6),bronze,x,9.5,0,{cast:false});add(int,new T.TorusGeometry(1.1,.08,seg(8),seg(32)),bronze,x,8,0,{cast:false}).rotation.x=Math.PI/2;add(int,new T.SphereGeometry(.55,seg(20),seg(14)),chand,x,7.9,0,{cast:false});const l=new T.PointLight(0xffb870,small?70:90,30,1.5);l.position.set(x,7.5,0);int.add(l);iLights.push(l);}
 // desks (instanced)
 const TEAMCOL={'TikTok scouts':0x4fd1c5,'YouTube Shorts scouts':0xe2685f,'Instagram Reels scouts':0xc77dde,'Meme page scouts':0xf2c14e,'Faceless niche scouts':0x8fb4ff,'Why-it-works analysts':0xe8c27a,'Engagement verifiers':0x7ed49b,'Floor lead':0xf4efe6};
 const seatsX=[-12.6,-9,-5.4,-1.8,1.8,5.4,9,12.6],seatsZ=[-9.5,-4.5,.5,5.5,10.5];const deskN=40;
@@ -128,10 +133,10 @@ let di=0;for(const z of seatsZ)for(const x of seatsX){deskPos.push([x,z]);M.comp
 const skin=std(0xe9e1d3,.55);// faceless mannequin heads — a quiet nod to the brief
 const agentObjs=[];const pickables=[];
 function makeAgent(a){const g=new T.Group(),c=TEAMCOL[a.team]||0xcccccc,body=std(c,.6),dark=std(0x23262e,.7);
- const torso=add(g,new T.CapsuleGeometry(.27,.55,4,10),body,0,1.25,0);const head=add(g,new T.SphereGeometry(.21,16,12),skin,0,1.88,0);
+ const torso=add(g,new T.CapsuleGeometry(.27,.55,phone?2:4,seg(10)),body,0,1.25,0);const head=add(g,new T.SphereGeometry(.21,seg(16),seg(12)),skin,0,1.88,0);
  const legL=new T.Group(),legR=new T.Group();legL.position.set(-.13,.82,0);legR.position.set(.13,.82,0);add(legL,new T.BoxGeometry(.16,.8,.18),dark,0,-.4,0);add(legR,new T.BoxGeometry(.16,.8,.18),dark,0,-.4,0);g.add(legL,legR);
  const armL=new T.Group(),armR=new T.Group();armL.position.set(-.36,1.5,0);armR.position.set(.36,1.5,0);add(armL,new T.BoxGeometry(.12,.6,.14),body,0,-.3,0);add(armR,new T.BoxGeometry(.12,.6,.14),body,0,-.3,0);g.add(armL,armR);
- const ring=add(g,new T.RingGeometry(.45,.58,32),new T.MeshBasicMaterial({color:0xe8c27a,transparent:true,opacity:0,side:T.DoubleSide}),0,.04,0,{cast:false,receive:false});ring.rotation.x=-Math.PI/2;
+ const ring=add(g,new T.RingGeometry(.45,.58,seg(32)),new T.MeshBasicMaterial({color:0xe8c27a,transparent:true,opacity:0,side:T.DoubleSide}),0,.04,0,{cast:false,receive:false});ring.rotation.x=-Math.PI/2;
  g.traverse(o=>{if(o.isMesh){o.userData.agent=a.id;pickables.push(o);}});int.add(g);return {a,g,torso,head,legL,legR,armL,armR,ring};}
 const walkPaths=[];const W=[[-15,-12.5],[15,-12.5],[15,13],[-15,13]];
 agents.forEach((a,i)=>{const o=makeAgent(a);o.phase=rand()*6.28;
@@ -164,7 +169,7 @@ canvas.addEventListener('pointerup',e=>{if(!down||down.moved||busy){down=null;re
  const hit=ray.intersectObjects(pickables,false)[0];if(hit)window.selectAgent?.(hit.object.userData.agent);});
 window.highlightAgent=id=>{selected=id;agentObjs.forEach(o=>o.ring.material.opacity=o.a.id===id?.95:0);};
 // diagnostics for regression tests (read-only)
-window.facelessFloor=Object.freeze({version:'live-v1',ready:()=>!busy,cameraState:()=>({view,position:camera.position.toArray(),target:controls.target.toArray(),azimuth:controls.getAzimuthalAngle(),polar:controls.getPolarAngle(),distance:controls.getDistance(),busy,touchAction:canvas.style.touchAction})});
+window.facelessFloor=Object.freeze({version:'live-v2',frames:()=>frameN,mode:()=>window.__ffNo3d||(document.querySelector('.scene-wrap.is-3d')?'3d':'loading'),ready:()=>!busy,cameraState:()=>({view,position:camera.position.toArray(),target:controls.target.toArray(),azimuth:controls.getAzimuthalAngle(),polar:controls.getPolarAngle(),distance:controls.getDistance(),busy,touchAction:canvas.style.touchAction})});
 // resize: only touches aspect/size, never the camera pose
 function resize(){const w=wrap.clientWidth,h=wrap.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w<520?52:42;camera.updateProjectionMatrix();}
 resize();placeCamera(view);new ResizeObserver(resize).observe(wrap);applyVisibility();drawFeed();drawTop();
@@ -172,7 +177,16 @@ document.fonts?.ready.then(()=>{drawFeed();drawTop();});
 let feedOff=0;setInterval(()=>{drawFeed(++feedOff);},2600);
 // ---------- loop ----------
 const occRay=new T.Ray(),occHit=new T.Vector3();const clock=new T.Clock();let visible=true;new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(wrap);
-renderer.setAnimationLoop(()=>{const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;if(!visible)return;
+let frameN=0;
+function stop3d(){try{renderer.setAnimationLoop(null);}catch(e){}}
+window.addEventListener('ff-no3d',stop3d);
+// WebGL context loss: three.js already preventDefault()s; if the context is not restored within 3s, keep the static image instead.
+let lostTimer=0;canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();clearTimeout(lostTimer);lostTimer=setTimeout(()=>FF.fail('context-lost'),3000);});
+canvas.addEventListener('webglcontextrestored',()=>{clearTimeout(lostTimer);});
+// a drawn frame is only 'confirmed' if real pixels came out: sample a few points right after render (sky/ground are never pure black)
+function pixelsOk(){try{const gl=renderer.getContext(),w=gl.drawingBufferWidth,h=gl.drawingBufferHeight,px=new Uint8Array(4);let lit=0;for(const [fx,fy] of [[.5,.5],[.2,.8],[.8,.8],[.5,.15],[.3,.4]]){gl.readPixels((w*fx)|0,(h*fy)|0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,px);if(px[0]+px[1]+px[2]>12)lit++;}return lit>=2;}catch(e){return true;}}
+renderer.setAnimationLoop(()=>{try{loop();}catch(e){stop3d();FF.fail('loop-error');console.error(e);}});
+function loop(){const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;if(!visible)return;
  if(tween){const k=Math.min(1,(performance.now()-tween.t0)/tween.ms),e=ease(k);camera.position.lerpVectors(tween.from,tween.to,e);controls.target.lerpVectors(tween.fromT,tween.toT,e);if(k>=1){const r=tween.res;tween=null;r();}}
  controls.update();
  if(ext.visible){occRay.origin.copy(camera.position);occRay.direction.subVectors(controls.target,camera.position);const span=occRay.direction.length();occRay.direction.normalize();for(const tw of towers){const inside=tw.box.containsPoint(camera.position),hit=occRay.intersectBox(tw.box,occHit);const want=(inside||(hit&&camera.position.distanceTo(occHit)<span-1))?.12:1;tw.o+=(want-tw.o)*Math.min(1,dt*8);for(const m of tw.mats){m.opacity=tw.o;m.depthWrite=tw.o>.95;}}
@@ -183,5 +197,7 @@ renderer.setAnimationLoop(()=>{const dt=Math.min(clock.getDelta(),.05),t=clock.e
    const target=Math.atan2(nx-x,nz-z);let d=target-o.g.rotation.y;d=Math.atan2(Math.sin(d),Math.cos(d));o.g.rotation.y+=d*Math.min(1,dt*8);const s=Math.sin(t*6.4*o.speed+o.phase);o.legL.rotation.x=s*.5;o.legR.rotation.x=-s*.5;o.armL.rotation.x=-s*.4;o.armR.rotation.x=s*.4;}
    if(o.ring.material.opacity>0)o.ring.rotation.z=t;}
   iLights.forEach((l,i)=>l.intensity=(small?70:90)*(1+Math.sin(t*1.7+i)*.03));}
- renderer.render(scene,camera);});
+ renderer.render(scene,camera);
+ if(FF.dead()){stop3d();return;}
+ if(FF.frame()){frameN++;if(frameN===12){if(pixelsOk())FF.confirm();else{stop3d();FF.fail('blank-frame');}}}}
 window.dispatchEvent(new Event('faceless-scene-ready'));
